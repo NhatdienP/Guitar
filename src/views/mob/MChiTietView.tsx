@@ -98,7 +98,8 @@ export default function MChiTietView({ vm }: { vm: any }) {
 {(vm.hasErr) && (<>
 <p role="alert" style={{ margin: "0", padding: "12px 14px", borderRadius: "12px", background: "#fdecea", color: "#b42318", fontSize: "14px" }}>{vm.err}</p>
 </>)}
-<button type="submit" style={{ height: "48px", border: "0", borderRadius: "999px", background: "#b0471a", color: "#fff", font: "inherit", fontSize: "16px", fontWeight: "700" }}>Gửi đơn đặt hàng</button>
+<input ref={vm.hp} type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }} />
+<button type="submit" disabled={vm.sending} aria-busy={vm.sending} style={{ height: "48px", border: "0", borderRadius: "999px", background: "#b0471a", color: "#fff", font: "inherit", fontSize: "16px", fontWeight: "700" }}>{vm.submitLabel}</button>
 </form>
 </>)}
 </div>

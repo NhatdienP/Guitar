@@ -4,7 +4,7 @@ import { useEffect, useState, type ChangeEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SanPhamView from '@/views/web/SanPhamView';
 import MSanPhamView from '@/views/mob/MSanPhamView';
-import { brands as BRANDS, products, type Product } from '@/lib/data';
+import type { Product } from '@/lib/data';
 
 const M = 1_000_000;
 const RANGES = [
@@ -34,7 +34,7 @@ type State = {
 
 const EMPTY: Omit<State, 'sort'> = { types: [], brands: [], prices: [], min: '', max: '', q: '' };
 
-export default function ProductsScreen() {
+export default function ProductsScreen({ products, brands: BRANDS }: { products: Product[]; brands: string[] }) {
   const params = useSearchParams();
   const [st, setSt] = useState<State>({ ...EMPTY, sort: 'new' });
   const [sortOpen, setSortOpen] = useState(false);
@@ -143,8 +143,9 @@ export default function ProductsScreen() {
     chips: webChips,
     hasFilter: webChips.length > 0,
     brandsShown: more ? brandOpts : brandOpts.slice(0, 6),
-    moreLabel: more ? 'Thu gọn' : `Xem thêm ${brandOpts.length - 6} hãng`,
+    moreLabel: more ? 'Thu gọn' : `Xem thêm ${Math.max(0, brandOpts.length - 6)} hãng`,
     toggleMore: () => setMore((m) => !m),
+    canMore: brandOpts.length > 6,
     caret: sortOpen ? 'rotate(180deg)' : 'none',
     sorts: SORTS.map(([k, label]) => ({
       label,

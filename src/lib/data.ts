@@ -1,4 +1,6 @@
-// Dữ liệu 44 cây đàn (lấy từ prototype, vốn đồng bộ từ CMS Webflow). Thứ tự mảng = "Mới về".
+// Dữ liệu dự phòng: 44 cây đàn lấy từ prototype. Website đọc sản phẩm thật từ Google Sheet
+// (src/lib/products.ts); danh sách này chỉ dùng khi chưa cấu hình SHEET_API_URL
+// hoặc không đọc được Sheet lúc build. Thứ tự mảng = "Mới về".
 
 export type Spec = { k: string; v: string };
 export type Product = {
@@ -1031,7 +1033,3 @@ export const faq: [string, string][] = [
 
 export const ZALO = 'https://zalo.me/0834777123';
 export const TEL = 'tel:0834777123';
-
-export function getProduct(id: string) {
-  return products.find((p) => p.id === id);
-}

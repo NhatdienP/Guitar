@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import MainView from '@/views/web/MainView';
 import MHomeView from '@/views/mob/MHomeView';
-import { faq as FAQ, img, products } from '@/lib/data';
+import { faq as FAQ, img, type Product } from '@/lib/data';
 
 const STRIP = ['Acoustic', 'Classic', 'Video test âm thanh', 'Setup miễn phí', 'Bảo hành 12 tháng'];
 const SVC = [
@@ -19,23 +19,25 @@ const CATS = [
 ];
 
 /** "Đàn mới về" slider (3 pages × 4) + FAQ accordion — shared state shape for both layouts. */
-function useHome(activeDot: string) {
+function useHome(products: Product[], activeDot: string) {
   const [page, setPage] = useState(0);
   const [open, setOpen] = useState(0);
   const fresh = products.slice(0, 12);
-  const go = (n: number) => setPage(Math.max(0, Math.min(2, n)));
+  const nPages = Math.max(1, Math.ceil(fresh.length / 4));
+  const idx = [...Array(nPages).keys()];
+  const go = (n: number) => setPage(Math.max(0, Math.min(nPages - 1, n)));
   return {
     yes: true,
     strip: STRIP.concat(STRIP),
     svc: SVC,
     cats: CATS,
-    pages: [0, 1, 2].map((i) => ({ items: fresh.slice(i * 4, i * 4 + 4) })),
+    pages: idx.map((i) => ({ items: fresh.slice(i * 4, i * 4 + 4) })),
     shift: `translateX(-${page * 100}%)`,
     prev: () => go(page - 1),
     next: () => go(page + 1),
     atStart: page === 0,
-    atEnd: page === 2,
-    dots: [0, 1, 2].map((i) => ({
+    atEnd: page >= nPages - 1,
+    dots: idx.map((i) => ({
       go: () => go(i),
       label: 'Trang ' + (i + 1),
       w: i === page ? activeDot : '8px',
@@ -51,9 +53,9 @@ function useHome(activeDot: string) {
   };
 }
 
-export default function HomeScreen() {
-  const web = useHome('28px');
-  const mob = useHome('24px');
+export default function HomeScreen({ products }: { products: Product[] }) {
+  const web = useHome(products, '28px');
+  const mob = useHome(products, '24px');
   return (
     <>
       <div className="v-web">

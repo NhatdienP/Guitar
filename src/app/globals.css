@@ -52,3 +52,9 @@ img {
 [id] {
   scroll-margin-top: 96px;
 }
+
+/* Order form while sending */
+button[disabled][aria-busy="true"] {
+  opacity: 0.65;
+  cursor: wait !important;
+}

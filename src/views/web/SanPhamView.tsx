@@ -31,7 +31,7 @@ export default function SanPhamView({ vm }: { vm: any }) {
 {(vm.brandsShown || []).map((o: any, _i2: number) => (<Fragment key={_i2}>
 <label className="jg-ck"><input type="checkbox" checked={o.on} onChange={o.toggle} /><span className="jg-box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>{o.label}</span><span className="n">{o.n}</span></label>
 </Fragment>))}
-<button type="button" onClick={vm.toggleMore} style={{ alignSelf: "flex-start", margin: "4px 8px 0", border: "0", background: "none", padding: "0", font: "inherit", fontSize: "13px", fontWeight: "600", color: "#b0471a", cursor: "pointer" }}>{vm.moreLabel}</button>
+{(vm.canMore) && (<><button type="button" onClick={vm.toggleMore} style={{ alignSelf: "flex-start", margin: "4px 8px 0", border: "0", background: "none", padding: "0", font: "inherit", fontSize: "13px", fontWeight: "600", color: "#b0471a", cursor: "pointer" }}>{vm.moreLabel}</button></>)}
 </fieldset>
 <fieldset aria-label="Khoảng giá" style={{ margin: "0", padding: "16px 10px 16px", border: "0", display: "flex", flexDirection: "column", gap: "2px" }}>
 <div className="jg-flt" aria-hidden="true">Khoảng giá</div>
