@@ -31,8 +31,10 @@ export default function MChiTietView({ vm }: { vm: any }) {
 </>)}
 <a href="#m-dat-hang" style={{ padding: "14px", borderRadius: "999px", background: "#b0471a", color: "#fff", fontWeight: "700", fontSize: "16px", textAlign: "center", textDecoration: "none" }}>Đặt hàng ngay</a>
 <a href="https://zalo.me/0834777123" target="_blank" rel="noopener" style={{ padding: "13px", borderRadius: "999px", background: "#fbf8f2", border: "1px solid #e2d8c7", color: "#1c1714", fontWeight: "700", fontSize: "16px", textAlign: "center", textDecoration: "none" }}>Hỏi qua Zalo</a>
+{vm.hasVideo && (
 <a href={vm.yt} target="_blank" rel="noopener" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", padding: "8px 14px", borderRadius: "999px", background: "#1c1714", color: "#fff", fontWeight: "700", fontSize: "15px", textDecoration: "none", boxShadow: "0 8px 20px rgba(28,23,20,0.2)" }}>
 <span style={{ width: "32px", height: "32px", borderRadius: "999px", background: "#ff0033", display: "flex", alignItems: "center", justifyContent: "center" }} aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z" /></svg></span>Xem video test âm thanh</a>
+)}
 <span style={{ fontSize: "12px", color: "#74695d", textAlign: "center" }}>Không cần thanh toán online · Shop gọi xác nhận trong 15 phút</span>
 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px 12px", padding: "18px", background: "#fbf8f2", border: "1px solid #e2d8c7", borderRadius: "20px" }}>
 {(vm.trust || []).map((t: any, _i2: number) => (<Fragment key={_i2}>

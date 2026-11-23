@@ -67,12 +67,46 @@ export function imageList(v: unknown) {
   return unique.length ? unique : [PLACEHOLDER];
 }
 
+/** Video link from the "video" column: any http(s) URL, else '' (button hidden). */
+export function videoUrl(v: unknown) {
+  const s = str(v);
+  return /^https?:\/\/\S+$/i.test(s) ? s : '';
+}
+
 const hidden = (v: unknown) => v === false || /^(false|0|no|không|an|ẩn)$/i.test(str(v));
+
+/**
+ * Column headers may be the technical names (ten, gia, anh…) or readable Vietnamese ones
+ * (Tên đàn, Giá, Ảnh sản phẩm…), in any order. Both map to the same keys.
+ */
+const HEADER_ALIASES: Record<string, string> = {
+  ten_dan: 'ten',
+  ten_san_pham: 'ten',
+  thuong_hieu: 'hang',
+  gia_ban: 'gia',
+  anh_san_pham: 'anh',
+  hinh_anh: 'anh',
+  link_youtube: 'video',
+  link_video: 'video',
+  video_test: 'video',
+  lung_va_hong: 'lung_hong',
+};
+
+function normalizeRow(r: Row): Row {
+  const out: Row = {};
+  for (const [k, v] of Object.entries(r)) {
+    const key = slugify(k).replace(/-/g, '_');
+    const name = HEADER_ALIASES[key] || key;
+    if (!(name in out) || str(out[name]) === '') out[name] = v;
+  }
+  return out;
+}
 
 export function rowsToProducts(rows: Row[]): Product[] {
   const seen = new Set<string>();
   const out: Product[] = [];
-  for (const r of rows) {
+  for (const raw of rows) {
+    const r = normalizeRow(raw);
     const title = str(r.ten);
     const price = parsePrice(r.gia);
     if (!title || !Number.isFinite(price) || hidden(r.hien_thi)) continue;
@@ -91,6 +125,7 @@ export function rowsToProducts(rows: Row[]): Product[] {
       desc: str(r.mo_ta),
       img: imgs[0],
       imgs,
+      video: videoUrl(r.video),
       specs: SPEC_COLS.map((c, i) => ({ k: SPEC_LABELS[i], v: str(r[c]) })).filter((s) => s.v),
       points: str(r.diem_noi_bat)
         .split('|')

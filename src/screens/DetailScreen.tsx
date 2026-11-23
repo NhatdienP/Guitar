@@ -37,7 +37,8 @@ function useDetail(p: Product, products: Product[]) {
     hasPoints: p.points.length > 0,
     hasSpecs: p.specs.length > 0,
     noSpecs: p.specs.length === 0,
-    yt: 'https://www.youtube.com/results?search_query=' + encodeURIComponent(p.title + ' guitar sound test'),
+    yt: p.video,
+    hasVideo: !!p.video,
     trust: TRUST,
     options: products
       .slice()

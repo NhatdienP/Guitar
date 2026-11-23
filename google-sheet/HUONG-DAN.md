@@ -45,6 +45,8 @@ Bạn thêm / sửa / ẩn / xoá đàn ngay trong Sheet; web tự cập nhật 
 ## Sử dụng hằng ngày
 
 ### Tab SanPham — mỗi dòng là 1 cây đàn
+Tên cột có thể viết kiểu kỹ thuật (`ten`, `gia`, `anh`…) hoặc tiếng Việt dễ đọc (`Tên đàn`, `Giá`, `Ảnh sản phẩm`, `Link youtube`, `Hiển thị`…), thứ tự cột tuỳ ý. Cột `hien_thi` / `Hiển thị` có thể là ô checkbox: bỏ tick = ẩn đàn.
+
 Thứ tự dòng = thứ tự **"Mới về"** trên web (dòng trên cùng là mới nhất, 12 dòng đầu hiện ở trang chủ).
 
 | Cột | Bắt buộc | Ghi chú |
@@ -58,6 +60,7 @@ Thứ tự dòng = thứ tự **"Mới về"** trên web (dòng trên cùng là 
 | `mo_ta` | | Đoạn "Âm thanh & cảm giác chơi" ở trang chi tiết |
 | `anh` | nên có | Link ảnh (xem bên dưới). **Nhiều ảnh: cách nhau bằng dấu phẩy**, ảnh đầu là ảnh chính. Trống thì hiện ảnh mặc định |
 | `dang_dan` … `hoan_thien` | | 6 ô bảng thông số kỹ thuật; ô trống sẽ bị ẩn |
+| `video` | | Link video test âm thanh (YouTube, Facebook, TikTok…). Có link thì trang chi tiết hiện nút **Xem video test âm thanh**; để trống thì nút bị ẩn |
 | `diem_noi_bat` | | Các nhãn cách nhau bởi dấu `\|`, ví dụ `Mặt gỗ nguyên tấm \| Có EQ` |
 | `hien_thi` | | `FALSE` để tạm ẩn đàn (đã bán, đang sửa…). Trống hoặc `TRUE` = hiện |
 

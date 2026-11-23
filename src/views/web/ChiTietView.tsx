@@ -36,8 +36,10 @@ export default function ChiTietView({ vm }: { vm: any }) {
 <a className="jg-btn" href="#dat-hang" style={{ padding: "14px", borderRadius: "999px", background: "#b0471a", color: "#fff", fontWeight: "600", fontSize: "15px", textAlign: "center", textDecoration: "none", boxShadow: "0 10px 24px rgba(176,71,26,0.3)" }}>Đặt hàng ngay</a>
 <a className="jg-btn" href="https://zalo.me/0834777123" target="_blank" rel="noopener" style={{ padding: "13px", borderRadius: "999px", background: "#fbf8f2", border: "1px solid #e2d8c7", color: "#1c1714", fontWeight: "600", fontSize: "15px", textAlign: "center", textDecoration: "none" }}>Hỏi qua Zalo</a>
 </div>
+{vm.hasVideo && (
 <a className="jg-btn" href={vm.yt} target="_blank" rel="noopener" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", width: "100%", boxSizing: "border-box", padding: "9px 18px", borderRadius: "999px", background: "#1c1714", color: "#fff", fontWeight: "600", fontSize: "15px", textDecoration: "none", boxShadow: "0 10px 24px rgba(28,23,20,0.22)" }}>
 <span style={{ width: "32px", height: "32px", borderRadius: "999px", background: "#ff0033", display: "flex", alignItems: "center", justifyContent: "center" }} aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z" /></svg></span>Xem video test âm thanh</a>
+)}
 <span style={{ fontSize: "13px", color: "#74695d" }}>Không cần thanh toán online · Shop gọi xác nhận trong 15 phút</span>
 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 24px", width: "100%", boxSizing: "border-box", padding: "18px 20px", background: "#fbf8f2", border: "1px solid #e2d8c7", borderRadius: "18px", marginTop: "4px" }}>
 {(vm.trust || []).map((t: any, _i2: number) => (<Fragment key={_i2}>
