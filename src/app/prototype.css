@@ -167,3 +167,5 @@
 .v-mob h3,
 .v-mob blockquote p,
 .v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.jg-more{transition:color .2s}
+.v-web .jg-more:hover,.v-mob .jg-more:hover{color:#b0471a !important}

@@ -83,9 +83,12 @@ export default function MainView({ vm }: { vm: any }) {
 </section>
 <section id="dan-moi-ve" style={{ padding: "88px 24px", background: "#fbf8f2" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
+<div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "24px", flexWrap: "wrap" }}>
 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "18px" }}>
 <span style={{ padding: "7px 14px", border: "1px solid #e2d8c7", borderRadius: "999px", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#6b6157" }}>MỚI VỀ</span>
 <h2 style={{ margin: "0", fontSize: "33px", lineHeight: "1.1", fontWeight: "700", letterSpacing: "-0.03em" }}>Đàn mới về</h2>
+</div>
+<Link href="/san-pham" className="jg-more" style={{ marginRight: "60px", paddingBottom: "4px", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "underline", textUnderlineOffset: "5px", textDecorationThickness: "1.5px" }}>Xem tất cả</Link>
 </div>
 <div style={{ position: "relative", padding: "0 60px" }}>
 <button className="jg-arrow" type="button" onClick={vm.prev} disabled={vm.atStart} aria-label="Xem đàn trước" style={{ position: "absolute", left: "0", top: "38%", width: "46px", height: "46px", borderRadius: "999px", border: "1px solid #e2d8c7", background: "#fff", color: "#1c1714", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", zIndex: "2" }}>

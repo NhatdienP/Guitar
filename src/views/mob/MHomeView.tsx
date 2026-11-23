@@ -47,7 +47,10 @@ export default function MHomeView({ vm }: { vm: any }) {
 </section>
 <section id="m-dan-moi-ve" style={{ padding: "52px 20px", background: "#fbf8f2", display: "flex", flexDirection: "column", gap: "16px" }}>
 <span style={{ alignSelf: "flex-start", padding: "7px 14px", border: "1px solid #e2d8c7", borderRadius: "999px", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#6b6157" }}>MỚI VỀ</span>
-<h2 style={{ margin: "0 0 12px", fontSize: "24px", lineHeight: "1.12", fontWeight: "700", letterSpacing: "-0.03em" }}>Đàn mới về</h2>
+<div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", margin: "0 0 12px" }}>
+<h2 style={{ margin: "0", fontSize: "24px", lineHeight: "1.12", fontWeight: "700", letterSpacing: "-0.03em" }}>Đàn mới về</h2>
+<Link href="/san-pham" className="jg-more" style={{ flex: "none", color: "#1c1714", fontWeight: "600", fontSize: "14px", textDecoration: "underline", textUnderlineOffset: "4px", textDecorationThickness: "1.5px" }}>Xem tất cả</Link>
+</div>
 <div style={{ position: "relative" }}>
 <div style={{ overflow: "hidden" }}>
 <div style={{ display: "flex", transition: "transform .5s cubic-bezier(.2,.7,.2,1)", transform: `${vm.shift}` }}>
