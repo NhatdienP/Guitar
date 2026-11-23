@@ -94,6 +94,7 @@ function doPost(e) {
         'Mới',
       ]);
       order.no = sh.getLastRow() - 1; // số thứ tự đơn = dòng trong tab DonHang (trừ dòng tiêu đề)
+      sortOrders_(sh); // đơn mới lên đầu
     } finally {
       lock.releaseLock();
     }
@@ -111,6 +112,51 @@ function doPost(e) {
   } catch (err) {
     return json_({ ok: false, error: String(err && err.message ? err.message : err) });
   }
+}
+
+// ---------------------------------------------------------------------------
+// Sắp xếp tab DonHang: theo trạng thái (Mới → Đã gọi xác nhận → Đang giao → Hoàn thành → Huỷ),
+// trong mỗi trạng thái đơn mới nhất ở trên. Chạy khi có đơn mới và khi sửa cột Trạng thái / Thời gian.
+// ---------------------------------------------------------------------------
+var STATUS_ORDER = ['Mới', 'Đã gọi xác nhận', 'Đang giao', 'Hoàn thành', 'Huỷ'];
+
+function statusRank_(s) {
+  var i = STATUS_ORDER.indexOf(String(s == null ? '' : s).trim());
+  return i < 0 ? 2.5 : i; // trạng thái lạ: xếp sau "Đang giao", trước "Hoàn thành"
+}
+
+function sortOrders_(sh) {
+  var n = sh.getLastRow() - 1;
+  if (n < 2) return;
+  var width = ORDER_HEADERS.length;      // A:J
+  var statusCol = width;                 // J = Trạng thái
+  var keyCol = width + 1;                // K = cột phụ tạm để sắp xếp, xoá ngay sau đó
+  var statuses = sh.getRange(2, statusCol, n, 1).getValues();
+  var key = sh.getRange(2, keyCol, n, 1);
+  key.setValues(statuses.map(function (r) { return [statusRank_(r[0])]; }));
+  sh.getRange(2, 1, n, keyCol).sort([{ column: keyCol, ascending: true }, { column: 1, ascending: false }]);
+  key.clearContent();
+}
+
+/** Tự chạy khi bạn sửa Sheet: đổi Trạng thái hoặc Thời gian của một đơn thì bảng tự sắp xếp lại. */
+function onEdit(e) {
+  try {
+    var sh = e && e.range && e.range.getSheet();
+    if (!sh || sh.getName() !== ORDER_SHEET || e.range.getRow() < 2) return;
+    var c1 = e.range.getColumn(), c2 = e.range.getLastColumn();
+    if (c1 <= ORDER_HEADERS.length && c2 >= ORDER_HEADERS.length || c1 === 1) {
+      var lock = LockService.getScriptLock();
+      if (!lock.tryLock(5000)) return;
+      try { sortOrders_(sh); } finally { lock.releaseLock(); }
+    }
+  } catch (err) {
+    console.error('onEdit sort: ' + err);
+  }
+}
+
+/** Chạy tay (nút Run) để sắp xếp lại toàn bộ bảng đơn hàng ngay. */
+function sortOrdersNow() {
+  sortOrders_(SpreadsheetApp.getActiveSpreadsheet().getSheetByName(ORDER_SHEET));
 }
 
 /** Đọc tab SanPham: dòng 1 là tiêu đề (id, ten, hang, ...), mỗi dòng sau là 1 cây đàn. */

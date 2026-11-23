@@ -91,3 +91,11 @@ Sửa xong phải **Deploy → Manage deployments → ✏️ Edit → Version: N
 - **Web không đổi sau khi sửa Sheet:** đợi 1–2 phút rồi tải lại trang 2 lần. Mở Web app URL xem có trả `"ok":true` không.
 - **Khách báo không gửi được đơn:** kiểm tra `SHEET_SECRET` trên Vercel trùng với `SECRET` trong Script Properties, và đã Redeploy sau khi thêm biến.
 - **Sheet lỗi / Google gián đoạn:** web vẫn hiện danh sách đàn lần cập nhật thành công gần nhất; form đặt hàng báo khách gọi hotline / Zalo.
+
+## Cập nhật Apps Script (khi file Code.gs thay đổi)
+1. Mở Sheet → **Extensions → Apps Script**, xoá hết code cũ trong `Code.gs`, dán toàn bộ [`Code.gs`](Code.gs) mới, bấm 💾 **Save**.
+2. **Deploy → Manage deployments** → bấm ✏️ (Edit) ở bản đang dùng → *Version*: **New version** → **Deploy**.
+   Giữ nguyên deployment cũ để Web app URL không đổi (không cần sửa gì trên Vercel).
+3. (Tuỳ chọn) chọn hàm **`sortOrdersNow`** → ▶ **Run** để sắp xếp lại ngay các đơn đang có.
+
+Tab **DonHang** tự sắp xếp: theo Trạng thái (Mới → Đã gọi xác nhận → Đang giao → Hoàn thành → Huỷ), trong mỗi trạng thái đơn mới nhất ở trên. Bảng sắp xếp lại khi có đơn mới và mỗi khi bạn đổi Trạng thái.
