@@ -1,0 +1,54 @@
+/* Note: no global box-sizing reset — the design's inline styles set box-sizing where they need it. */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f4eee3;
+  color: #1c1714;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*
+ * Two layouts from the design: the desktop ("web") prototype and the phone ("mobile") prototype.
+ * Each route renders both; CSS shows exactly one depending on the viewport width.
+ */
+.v-mob {
+  display: none;
+}
+
+@media (max-width: 1099px) {
+  .v-web {
+    display: none;
+  }
+  .v-mob {
+    display: block;
+  }
+}
+
+/* Product card (shared by both layouts) */
+.jg-card img {
+  transition: transform 0.5s ease;
+}
+.jg-card:hover img {
+  transform: scale(1.05);
+}
+.jg-arr {
+  color: #1c1714;
+}
+.jg-card:hover .jg-arr {
+  background: #b0471a !important;
+  color: #fff;
+}
+
+/* Keep in-page anchors clear of the sticky header */
+[id] {
+  scroll-margin-top: 96px;
+}

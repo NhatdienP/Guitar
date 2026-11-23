@@ -1,0 +1,169 @@
+/* CSS lifted from the prototype components, scoped per platform. */
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web a{color:#b0471a}
+.v-web a:hover{color:#8a3612}
+.v-web .jg-btn{transition:transform .2s, box-shadow .2s, background .2s}
+.v-web .jg-btn:hover{transform:translateY(-2px)}
+.v-web .jg-cat{transition:transform .35s}
+.v-web .jg-cat:hover{transform:translateY(-4px)}
+.v-web .jg-cat:hover .jg-circ{background:#b0471a;color:#fff}
+.v-web .jg-arrow:hover{background:#b0471a;border-color:#b0471a;color:#fff}
+.v-web .jg-arrow:disabled{opacity:.3;cursor:default}
+@keyframes jgm{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.v-web .jg-marq{animation:jgm 28s linear infinite}
+.v-web .jg-faq summary::-webkit-details-marker{display:none}
+.v-web .jg-svc:hover{border-color:#b0471a}
+@media (max-width: 900px){.v-web .jg-h1{font-size:34px !important}
+.v-web .jg-2col{grid-template-columns:1fr !important}
+.v-web .jg-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web a{color:#b0471a}
+.v-web a:hover{color:#8a3612}
+.v-web .jg-ck{position:relative;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14.5px;color:#1c1714;cursor:pointer;transition:background .15s}
+.v-web .jg-ck:hover{background:#f1e9dc}
+.v-web .jg-fsc{scrollbar-width:thin;scrollbar-color:#d8ccb9 transparent}
+.v-web .jg-fsc::-webkit-scrollbar{width:6px}
+.v-web .jg-fsc::-webkit-scrollbar-thumb{background:#d8ccb9;border-radius:6px}
+.v-web .jg-ck input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.v-web .jg-box{flex:none;width:18px;height:18px;box-sizing:border-box;border:1.5px solid #ddd2c0;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.v-web .jg-box svg{opacity:0;transition:opacity .15s}
+.v-web .jg-ck:hover .jg-box{border-color:#c9bba5}
+.v-web .jg-ck input:checked + .jg-box{background:#b0471a;border-color:#b0471a}
+.v-web .jg-ck input:checked + .jg-box svg{opacity:1}
+.v-web .jg-ck input:focus-visible + .jg-box{box-shadow:0 0 0 3px rgba(176,71,26,.2)}
+.v-web .jg-ck .n{margin-left:auto;font-size:12.5px;color:#8f8477;font-variant-numeric:tabular-nums}
+.v-web .jg-flt{display:block;margin:0;padding:0 8px 8px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:700;letter-spacing:0;color:#1c1714;opacity:1}
+.v-web .jg-pin{width:100%;box-sizing:border-box;height:38px;padding:0 10px;border:1px solid #e6dccb;border-radius:10px;background:#fff;font:inherit;font-size:14px;color:#1c1714;outline:none}
+.v-web .jg-pin:focus{border-color:#b0471a;box-shadow:0 0 0 3px rgba(176,71,26,.12)}
+.v-web .jg-chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 6px 0 12px;border-radius:999px;background:#fbe9dd;color:#8a3612;font:inherit;font-size:13px;font-weight:600;border:0;cursor:pointer}
+.v-web .jg-chip:hover{background:#f6dac7}
+.v-web .jg-opt:hover{background:#f0e8da}
+@media (max-width: 900px){.v-web .jg-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web a{color:#b0471a}
+.v-web a:hover{color:#8a3612}
+.v-web .jg-btn{transition:transform .2s}
+.v-web .jg-btn:hover{transform:translateY(-2px)}
+.v-web .jg-in{width:100%;box-sizing:border-box;height:46px;padding:0 16px;border:1px solid #e2d8c7;border-radius:14px;background:#fff;font:inherit;font-size:15px;color:#1c1714;outline:none}
+.v-web .jg-in:focus{border-color:#b0471a;box-shadow:0 0 0 3px rgba(176,71,26,.15)}
+.v-web .jg-lb{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600}
+@media (max-width: 900px){.v-web .jg-2col{grid-template-columns:1fr !important}
+.v-web .jg-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web a{color:#b0471a}
+.v-web a:hover{color:#8a3612}
+@media (max-width: 900px){.v-web .jg-2col{grid-template-columns:1fr !important}
+.v-web .jg-st{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.v-web .jg-h1{font-size:40px !important}}
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web a{color:#b0471a}
+.v-web a:hover{color:#8a3612}
+.v-web .jg-ct{transition:transform .25s, border-color .25s}
+.v-web .jg-ct:hover{transform:translateY(-4px);border-color:#b0471a}
+@media (max-width: 900px){.v-web .jg-2col{grid-template-columns:1fr !important}
+.v-web .jg-h1{font-size:40px !important}}
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web .jg-nl{position:relative;display:flex;align-items:center;height:76px;padding:0 2px;color:#4a4038;text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
+.v-web .jg-nl::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;border-radius:2px;background:#b0471a;transform:scaleX(0);transition:transform .25s}
+.v-web .jg-nl:hover{color:#1c1714}
+.v-web .jg-nl:hover::after{transform:scaleX(.5)}
+.v-web .jg-nl.on{color:#1c1714;font-weight:700}
+.v-web .jg-nl.on::after{transform:scaleX(1)}
+.v-web .jg-sr{transition:border-color .2s, box-shadow .2s, background .2s}
+.v-web .jg-sr:focus-within{border-color:#b0471a;background:#fff;box-shadow:0 0 0 3px rgba(176,71,26,.12)}
+.v-web .jg-sr input::placeholder{color:#8f8477}
+.v-web .jg-hl:hover .jg-hn{color:#b0471a}
+.v-web .jg-zl{transition:background .2s}
+.v-web .jg-zl:hover{background:#0057d6}
+.v-web h1,
+.v-web h2,
+.v-web h3,
+.v-web blockquote p,
+.v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-web .jg-fl{color:#c2b2a1;text-decoration:none;font-size:15px;line-height:1.4;transition:color .2s}
+.v-web .jg-fl:hover{color:#f4eee3}
+.v-web .jg-fh{margin:0 0 4px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#f4eee3}
+@media (max-width: 900px){.v-web .jg-fg{grid-template-columns:1fr 1fr !important}
+.v-web .jg-fb{grid-column:1 / -1}}
+
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-mob a{color:#b0471a}
+@keyframes jgm{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.v-mob .jg-marq{animation:jgm 22s linear infinite}
+.v-mob .jg-arrow:disabled{opacity:.3}
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-mob .jg-chips{scrollbar-width:none}
+.v-mob .jg-chips::-webkit-scrollbar{display:none}
+@keyframes jgup{from{transform:translateY(100%)}to{transform:none}}
+@keyframes jgfade{from{opacity:0}to{opacity:1}}
+.v-mob .jg-flt{padding:0 8px 8px;font-size:14px;font-weight:700;color:#1c1714}
+.v-mob .jg-ck{position:relative;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 8px;border-radius:8px;font-size:15px;color:#1c1714}
+.v-mob .jg-ck input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.v-mob .jg-box{flex:none;width:20px;height:20px;box-sizing:border-box;border:1.5px solid #ddd2c0;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.v-mob .jg-box svg{opacity:0}
+.v-mob .jg-ck input:checked + .jg-box{background:#b0471a;border-color:#b0471a}
+.v-mob .jg-ck input:checked + .jg-box svg{opacity:1}
+.v-mob .jg-ck input:focus-visible + .jg-box{box-shadow:0 0 0 3px rgba(176,71,26,.2)}
+.v-mob .jg-ck .n{margin-left:auto;font-size:12.5px;color:#8f8477;font-variant-numeric:tabular-nums}
+.v-mob .jg-pin{width:100%;box-sizing:border-box;height:44px;padding:0 12px;border:1px solid #e6dccb;border-radius:12px;background:#fff;font:inherit;font-size:16px;color:#1c1714;outline:none}
+.v-mob .jg-pin:focus{border-color:#b0471a}
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-mob .jg-in{width:100%;box-sizing:border-box;height:46px;padding:0 14px;border:1px solid #e2d8c7;border-radius:14px;background:#fff;font:inherit;font-size:16px;color:#1c1714;outline:none}
+.v-mob .jg-in:focus{border-color:#b0471a;box-shadow:0 0 0 3px rgba(176,71,26,.15)}
+.v-mob .jg-lb{display:flex;flex-direction:column;gap:7px;font-size:14px;font-weight:600}
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
+.v-mob h1,
+.v-mob h2,
+.v-mob h3,
+.v-mob blockquote p,
+.v-mob .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
