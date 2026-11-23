@@ -8,10 +8,10 @@ import { ZALO_QR } from '@/lib/zaloQr';
  *
  * zalo.me/<phone> links to a personal Zalo account, and on a computer Zalo asks the visitor to
  * log in to Zalo Web first. So on desktop we intercept every zalo.me/<phone> link:
- *  1. try to open the Zalo PC app straight in the conversation (zalo://conversation?phone=…,
- *     the browser asks "Open Zalo?" the first time);
- *  2. show a small dialog with the same "open app" button, a QR code to continue on the phone,
- *     and Zalo Web as a last resort.
+ *  1. open the Zalo PC app straight in the conversation (zalo://conversation?phone=…;
+ *     the browser asks "Open Zalo?" until the visitor ticks "Always allow");
+ *  2. only if nothing happened (app not installed), show a small dialog with a QR code to
+ *     continue on the phone and Zalo Web as a last resort.
  * On phones the original link is kept: it opens the Zalo app directly.
  */
 const isMobile = () =>
@@ -33,8 +33,18 @@ export default function ZaloBridge() {
       const m = a?.href.match(/^https?:\/\/zalo\.me\/(0\d{9})\/?$/);
       if (!m || isMobile()) return;
       e.preventDefault();
-      setPhone(m[1]);
-      window.location.href = appLink(m[1]);
+      const ph = m[1];
+      // Ask the browser to open the Zalo PC app. If Zalo is installed, the browser shows its own
+      // "Open Zalo?" prompt (or opens the app) and the page loses focus — then we stay quiet.
+      // If nothing takes the focus, the app is probably not installed: show our fallback dialog.
+      let blurred = false;
+      const onBlur = () => (blurred = true);
+      window.addEventListener('blur', onBlur, { once: true });
+      window.location.href = appLink(ph);
+      window.setTimeout(() => {
+        window.removeEventListener('blur', onBlur);
+        if (!blurred && document.visibilityState === 'visible') setPhone(ph);
+      }, 1800);
     };
     document.addEventListener('click', onClick, true);
     return () => document.removeEventListener('click', onClick, true);
@@ -67,7 +77,7 @@ export default function ZaloBridge() {
           </svg>
         </button>
         <strong id="jg-zl-title" className="jg-zl-title">Chat Zalo với J.guitar</strong>
-        <p className="jg-zl-text">Đang mở app Zalo trên máy tính. Nếu trình duyệt hỏi, hãy chọn <b>Mở Zalo</b>.</p>
+        <p className="jg-zl-text">Không mở được app Zalo trên máy tính này. Quét mã bằng điện thoại để chat, hoặc thử mở lại app.</p>
         <a className="jg-zl-main" href={appLink(phone)}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.6-5A8.5 8.5 0 1 1 21 12z" />
