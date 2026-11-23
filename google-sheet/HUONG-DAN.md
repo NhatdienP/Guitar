@@ -17,6 +17,9 @@ Bạn thêm / sửa / ẩn / xoá đàn ngay trong Sheet; web tự cập nhật 
 3. Bấm ⚙️ **Project Settings** (cột trái) → kéo xuống **Script Properties** → **Add script property**:
    - Property: `SECRET` — Value: một chuỗi ngẫu nhiên dài. Tạo bằng lệnh `openssl rand -hex 24` trong Terminal, hoặc gõ bừa ~40 ký tự chữ + số. **Giữ chuỗi này, bước 4 cần dùng lại.**
    - (Tuỳ chọn) Property: `NOTIFY_EMAIL` — Value: email muốn nhận thông báo mỗi khi có đơn mới.
+     Email có số đơn, thông tin khách, nút **Gọi khách**, **Nhắn Zalo**, **Mở bảng đơn hàng**, **Xem đàn trên web**.
+     Muốn gửi cho nhiều người thì ngăn cách bằng dấu phẩy.
+   - (Tuỳ chọn) Property: `SITE_URL` — địa chỉ website (mặc định `https://guitar-psi-eight.vercel.app`), dùng cho nút "Xem đàn trên web". Đổi khi có tên miền riêng.
    - Bấm **Save script properties**.
 4. Quay lại **Editor** (biểu tượng `< >`), ở thanh trên chọn hàm **`setup`** → bấm ▶ **Run**.
    Google sẽ hỏi quyền: **Review permissions** → chọn tài khoản → *Advanced* → *Go to … (unsafe)* → **Allow**.

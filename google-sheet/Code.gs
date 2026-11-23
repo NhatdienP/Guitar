@@ -63,33 +63,49 @@ function doPost(e) {
       return json_({ ok: false, error: 'invalid' });
     }
 
+    var order = {
+      time: new Date(),
+      name: name,
+      phone: phone,
+      guitar: clean_(o.guitar, 200),
+      productId: clean_(o.productId, 120),
+      qty: clean_(o.qty, 10) || '1',
+      ship: clean_(o.ship, 60),
+      addr: clean_(o.addr, 300),
+      note: clean_(o.note, 1000),
+    };
+
     var lock = LockService.getScriptLock();
     lock.waitLock(10000);
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
     try {
-      var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(ORDER_SHEET);
-      if (!sh) { setup(); sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(ORDER_SHEET); }
+      var sh = ss.getSheetByName(ORDER_SHEET);
+      if (!sh) { setup(); sh = ss.getSheetByName(ORDER_SHEET); }
       sh.appendRow([
-        new Date(),
-        safe_(name),
-        "'" + phone,
-        safe_(clean_(o.guitar, 200)),
-        safe_(clean_(o.productId, 120)),
-        safe_(clean_(o.qty, 10) || '1'),
-        safe_(clean_(o.ship, 60)),
-        safe_(clean_(o.addr, 300)),
-        safe_(clean_(o.note, 1000)),
+        order.time,
+        safe_(order.name),
+        "'" + order.phone,
+        safe_(order.guitar),
+        safe_(order.productId),
+        safe_(order.qty),
+        safe_(order.ship),
+        safe_(order.addr),
+        safe_(order.note),
         'Mới',
       ]);
+      order.no = sh.getLastRow() - 1; // số thứ tự đơn = dòng trong tab DonHang (trừ dòng tiêu đề)
     } finally {
       lock.releaseLock();
     }
 
+    // Đơn đã được lưu; lỗi gửi mail không được làm khách tưởng đặt hàng thất bại.
     var to = getNotifyEmail_();
     if (to) {
-      MailApp.sendEmail(to, 'J.guitar – Đơn mới: ' + clean_(o.guitar, 200),
-        'Khách: ' + name + '\nSĐT: ' + phone + '\nĐàn: ' + clean_(o.guitar, 200) +
-        '\nSố lượng: ' + (clean_(o.qty, 10) || '1') + '\nNhận: ' + clean_(o.ship, 60) +
-        '\nĐịa chỉ: ' + clean_(o.addr, 300) + '\nGhi chú: ' + clean_(o.note, 1000));
+      try {
+        sendOrderEmail_(to, order, ss.getUrl() + '#gid=' + sh.getSheetId());
+      } catch (mailErr) {
+        console.error('Gửi email thông báo thất bại: ' + mailErr);
+      }
     }
     return json_({ ok: true });
   } catch (err) {
@@ -118,6 +134,95 @@ function readProducts_() {
     if (!empty) out.push(row);
   }
   return out;
+}
+
+// ---------------------------------------------------------------------------
+// Email thông báo đơn mới
+// ---------------------------------------------------------------------------
+
+// Địa chỉ website, dùng cho link "Xem đàn trên web". Có thể đổi bằng Script Property SITE_URL.
+function getSiteUrl_() {
+  return (PropertiesService.getScriptProperties().getProperty('SITE_URL') || 'https://guitar-psi-eight.vercel.app').replace(/\/+$/, '');
+}
+
+function sendOrderEmail_(to, order, sheetUrl) {
+  // "Classic · Matsuoka C-40 4/4 – 4.300.000đ" → loại, tên đàn, giá
+  var m = order.guitar.match(/^(.+?) · (.+) – ([\d.]+đ)$/);
+  var type = m ? m[1] : '';
+  var title = m ? m[2] : order.guitar;
+  var price = m ? m[3] : '';
+  var phoneText = order.phone.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
+  var when = Utilities.formatDate(order.time, 'Asia/Ho_Chi_Minh', 'HH:mm · dd/MM/yyyy');
+  var productUrl = order.productId ? getSiteUrl_() + '/san-pham/' + encodeURIComponent(order.productId) : '';
+  var shop = order.ship.indexOf('showroom') >= 0;
+
+  var subject = 'Đơn mới #' + order.no + ' · ' + title + ' · ' + order.name;
+
+  var C = { ink: '#1c1714', muted: '#74695d', line: '#e8dfd1', bg: '#f4eee3', card: '#fbf8f2', brand: '#b0471a', zalo: '#0068ff' };
+  var row = function (label, value) {
+    return '<tr><td style="padding:10px 0;border-bottom:1px solid ' + C.line + ';color:' + C.muted + ';font-size:13px;width:120px;vertical-align:top">' + label +
+      '</td><td style="padding:10px 0;border-bottom:1px solid ' + C.line + ';color:' + C.ink + ';font-size:15px;vertical-align:top">' + value + '</td></tr>';
+  };
+  var button = function (href, text, bg, fg, border) {
+    return '<a href="' + esc_(href) + '" style="display:inline-block;margin:0 8px 8px 0;padding:11px 18px;border-radius:999px;background:' + bg + ';color:' + fg +
+      ';border:1px solid ' + (border || bg) + ';font-size:14px;font-weight:700;text-decoration:none">' + text + '</a>';
+  };
+  var dash = '<span style="color:' + C.muted + '">—</span>';
+
+  var html =
+    '<div style="margin:0;padding:24px 12px;background:' + C.bg + ';font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Arial,sans-serif">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:' + C.card + ';border:1px solid ' + C.line + ';border-radius:16px;overflow:hidden">' +
+    // header
+    '<tr><td style="background:' + C.ink + ';padding:18px 24px">' +
+      '<div style="color:#f4eee3;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700">J.guitar · Đơn đặt hàng mới</div>' +
+      '<div style="color:#c2b2a1;font-size:13px;margin-top:4px">Đơn #' + order.no + ' · ' + when + '</div>' +
+    '</td></tr>' +
+    // guitar
+    '<tr><td style="padding:22px 24px 6px">' +
+      (type ? '<div style="display:inline-block;padding:4px 10px;border-radius:999px;background:#fbe9dd;color:' + C.brand + ';font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">' + esc_(type) + '</div>' : '') +
+      '<div style="margin-top:10px;color:' + C.ink + ';font-size:22px;font-weight:800;line-height:1.25">' + esc_(title) + '</div>' +
+      '<div style="margin-top:4px;color:' + C.brand + ';font-size:20px;font-weight:800">' + esc_(price) +
+        (order.qty !== '1' ? ' <span style="color:' + C.muted + ';font-size:14px;font-weight:600">× ' + esc_(order.qty) + '</span>' : '') + '</div>' +
+    '</td></tr>' +
+    // details
+    '<tr><td style="padding:10px 24px 4px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0">' +
+      row('Khách hàng', '<b>' + esc_(order.name) + '</b>') +
+      row('Điện thoại', '<a href="tel:' + order.phone + '" style="color:' + C.ink + ';font-weight:700;text-decoration:none">' + phoneText + '</a>') +
+      row('Số lượng', esc_(order.qty)) +
+      row('Nhận hàng', esc_(order.ship)) +
+      row('Địa chỉ', order.addr ? esc_(order.addr) : (shop ? '<span style="color:' + C.muted + '">Khách đến showroom</span>' : dash)) +
+      row('Ghi chú', order.note ? esc_(order.note).replace(/\n/g, '<br>') : dash) +
+    '</table></td></tr>' +
+    // actions
+    '<tr><td style="padding:18px 24px 14px">' +
+      button('tel:' + order.phone, 'Gọi khách', C.brand, '#ffffff') +
+      button('https://zalo.me/' + order.phone, 'Nhắn Zalo', C.zalo, '#ffffff') +
+      button(sheetUrl, 'Mở bảng đơn hàng', '#ffffff', C.ink, C.line) +
+      (productUrl ? button(productUrl, 'Xem đàn trên web', '#ffffff', C.ink, C.line) : '') +
+    '</td></tr>' +
+    '<tr><td style="padding:14px 24px 20px;border-top:1px solid ' + C.line + ';color:' + C.muted + ';font-size:12px;line-height:1.5">' +
+      'Gọi xác nhận cho khách trong 15 phút như cam kết trên web. Cập nhật cột <b>Trạng thái</b> trong bảng đơn hàng sau khi xử lý.' +
+    '</td></tr>' +
+    '</table></div>';
+
+  var text =
+    'J.GUITAR – ĐƠN MỚI #' + order.no + ' (' + when + ')\n\n' +
+    'Đàn:        ' + title + (price ? ' – ' + price : '') + '\n' +
+    'Số lượng:   ' + order.qty + '\n\n' +
+    'Khách:      ' + order.name + '\n' +
+    'Điện thoại: ' + phoneText + '\n' +
+    'Nhận hàng:  ' + order.ship + '\n' +
+    'Địa chỉ:    ' + (order.addr || (shop ? 'Khách đến showroom' : '—')) + '\n' +
+    'Ghi chú:    ' + (order.note || '—') + '\n\n' +
+    'Bảng đơn hàng: ' + sheetUrl + '\n' + (productUrl ? 'Xem đàn: ' + productUrl + '\n' : '');
+
+  MailApp.sendEmail({ to: to, subject: subject, body: text, htmlBody: html, name: 'J.guitar Website' });
+}
+
+function esc_(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 function json_(obj) {
