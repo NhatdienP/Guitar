@@ -17,6 +17,8 @@ export type Product = {
   imgs: string[];
   /** Sound-test video link (YouTube…); '' = no video, the button is hidden. */
   video: string;
+  /** Position in the home page "Đàn mới về" slider (1 = first); null = not picked. */
+  featured: number | null;
   desc: string;
   specs: Spec[];
   points: string[];
@@ -29,7 +31,7 @@ export function fmt(n: number) {
   return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ';
 }
 
-type Raw = Omit<Product, 'priceText' | 'specs' | 'rank' | 'imgs' | 'video'> & { specs: string[] };
+type Raw = Omit<Product, 'priceText' | 'specs' | 'rank' | 'imgs' | 'video' | 'featured'> & { specs: string[] };
 
 const RAW: Raw[] = [
   {
@@ -996,6 +998,7 @@ export const products: Product[] = RAW.map((r, i) => ({
   priceText: fmt(r.price),
   imgs: [r.img],
   video: '',
+  featured: i < 12 ? i + 1 : null,
   specs: r.specs.map((v, k) => ({ k: SPEC[k], v })),
   rank: i,
 }));

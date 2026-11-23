@@ -47,7 +47,9 @@ Bạn thêm / sửa / ẩn / xoá đàn ngay trong Sheet; web tự cập nhật 
 ### Tab SanPham — mỗi dòng là 1 cây đàn
 Tên cột có thể viết kiểu kỹ thuật (`ten`, `gia`, `anh`…) hoặc tiếng Việt dễ đọc (`Tên đàn`, `Giá`, `Ảnh sản phẩm`, `Link youtube`, `Hiển thị`…), thứ tự cột tuỳ ý. Cột `hien_thi` / `Hiển thị` có thể là ô checkbox: bỏ tick = ẩn đàn.
 
-Thứ tự dòng = thứ tự **"Mới về"** trên web (dòng trên cùng là mới nhất, 12 dòng đầu hiện ở trang chủ).
+Thứ tự dòng = thứ tự đàn trong trang **Sản phẩm** (sắp xếp "Mới về"): dòng trên cùng hiện đầu tiên, rồi lần lượt trái → phải, trên → dưới. Muốn đổi vị trí: kéo dòng lên/xuống.
+
+Cột **Mới về** chọn đàn cho slider "Đàn mới về" ở trang chủ: ghi số 1, 2, 3… theo thứ tự muốn hiện; để trống = không hiện ở trang chủ. Nếu cả cột trống, trang chủ lấy 12 dòng đầu.
 
 | Cột | Bắt buộc | Ghi chú |
 | --- | --- | --- |

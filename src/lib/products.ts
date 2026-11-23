@@ -73,6 +73,12 @@ export function videoUrl(v: unknown) {
   return /^https?:\/\/\S+$/i.test(s) ? s : '';
 }
 
+/** "Mới về" column: a positive number = position on the home page slider; empty = not shown there. */
+function featuredPos(v: unknown) {
+  const n = typeof v === 'number' ? v : Number(str(v).replace(',', '.'));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 const hidden = (v: unknown) => v === false || /^(false|0|no|không|an|ẩn)$/i.test(str(v));
 
 /**
@@ -90,6 +96,9 @@ const HEADER_ALIASES: Record<string, string> = {
   link_video: 'video',
   video_test: 'video',
   lung_va_hong: 'lung_hong',
+  dan_moi_ve: 'moi_ve',
+  thu_tu_moi_ve: 'moi_ve',
+  trang_chu: 'moi_ve',
 };
 
 function normalizeRow(r: Row): Row {
@@ -126,6 +135,7 @@ export function rowsToProducts(rows: Row[]): Product[] {
       img: imgs[0],
       imgs,
       video: videoUrl(r.video),
+      featured: featuredPos(r.moi_ve),
       specs: SPEC_COLS.map((c, i) => ({ k: SPEC_LABELS[i], v: str(r[c]) })).filter((s) => s.v),
       points: str(r.diem_noi_bat)
         .split('|')

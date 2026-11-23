@@ -22,7 +22,9 @@ const CATS = [
 function useHome(products: Product[], activeDot: string) {
   const [page, setPage] = useState(0);
   const [open, setOpen] = useState(0);
-  const fresh = products.slice(0, 12);
+  // Picked in the Sheet's "Mới về" column (1, 2, 3…); if none is picked, the first 12 rows.
+  const picked = products.filter((p) => p.featured != null).sort((a, b) => (a.featured as number) - (b.featured as number) || a.rank - b.rank);
+  const fresh = picked.length ? picked : products.slice(0, 12);
   const nPages = Math.max(1, Math.ceil(fresh.length / 4));
   const idx = [...Array(nPages).keys()];
   const go = (n: number) => setPage(Math.max(0, Math.min(nPages - 1, n)));
