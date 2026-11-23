@@ -40,7 +40,7 @@ export default function Card({ item, compact = false }: Props) {
         <div style={{ fontFamily: "'Bricolage Grotesque', 'Be Vietnam Pro', sans-serif", fontSize: c ? 14 : 16, fontWeight: 600, letterSpacing: '-0.01em', lineHeight: 1.25 }}>
           {item.title}
         </div>
-        <div style={{ fontSize: c ? 12 : 13, color: '#6b6157', lineHeight: 1.45 }}>{item.short}</div>
+        <div title={item.short} style={{ fontSize: c ? 12 : 13, color: '#6b6157', lineHeight: 1.45, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0 }}>{item.short}</div>
         <div style={{ fontSize: c ? 14 : 15, fontWeight: 800, marginTop: 2, fontVariantNumeric: 'tabular-nums' }}>{item.priceText}</div>
       </div>
     </Link>
