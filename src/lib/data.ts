@@ -11,7 +11,10 @@ export type Product = {
   price: number;
   priceText: string;
   short: string;
+  /** Main image (= imgs[0]). */
   img: string;
+  /** All images, main first. */
+  imgs: string[];
   desc: string;
   specs: Spec[];
   points: string[];
@@ -24,7 +27,7 @@ export function fmt(n: number) {
   return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ';
 }
 
-type Raw = Omit<Product, 'priceText' | 'specs' | 'rank'> & { specs: string[] };
+type Raw = Omit<Product, 'priceText' | 'specs' | 'rank' | 'imgs'> & { specs: string[] };
 
 const RAW: Raw[] = [
   {
@@ -989,6 +992,7 @@ const RAW: Raw[] = [
 export const products: Product[] = RAW.map((r, i) => ({
   ...r,
   priceText: fmt(r.price),
+  imgs: [r.img],
   specs: r.specs.map((v, k) => ({ k: SPEC[k], v })),
   rank: i,
 }));

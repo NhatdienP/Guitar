@@ -56,7 +56,7 @@ Thứ tự dòng = thứ tự **"Mới về"** trên web (dòng trên cùng là 
 | `gia` | **có** | Số tiền, ví dụ `4300000` hoặc `4.300.000` |
 | `mo_ta_ngan` | | 1 dòng dưới tên ở thẻ sản phẩm |
 | `mo_ta` | | Đoạn "Âm thanh & cảm giác chơi" ở trang chi tiết |
-| `anh` | nên có | Link ảnh (xem bên dưới). Trống thì hiện ảnh mặc định |
+| `anh` | nên có | Link ảnh (xem bên dưới). **Nhiều ảnh: cách nhau bằng dấu phẩy**, ảnh đầu là ảnh chính. Trống thì hiện ảnh mặc định |
 | `dang_dan` … `hoan_thien` | | 6 ô bảng thông số kỹ thuật; ô trống sẽ bị ẩn |
 | `diem_noi_bat` | | Các nhãn cách nhau bởi dấu `\|`, ví dụ `Mặt gỗ nguyên tấm \| Có EQ` |
 | `hien_thi` | | `FALSE` để tạm ẩn đàn (đã bán, đang sửa…). Trống hoặc `TRUE` = hiện |
@@ -72,6 +72,10 @@ Thứ tự dòng = thứ tự **"Mới về"** trên web (dòng trên cùng là 
 - Hoặc dán bất kỳ link ảnh công khai nào (`https://…jpg`).
 - Ảnh có sẵn của 44 cây đàn mẫu nằm trong website (dạng `/images/…`), giữ nguyên là được.
 - Nên dùng ảnh dọc tỉ lệ 3:4, rộng khoảng 1200px.
+- **Nhiều ảnh cho 1 cây đàn:** dán các link cách nhau bằng dấu phẩy, ví dụ
+  `https://drive.google.com/file/d/AAA/view, https://drive.google.com/file/d/BBB/view`.
+  Ảnh đầu tiên hiện ở thẻ sản phẩm; trang chi tiết có bộ ảnh (bấm ảnh nhỏ / vuốt trên điện thoại / bấm ảnh lớn để xem toàn màn hình).
+  Ảnh nào hỏng link hoặc chưa bật chia sẻ sẽ tự bị bỏ qua.
 
 ### Tab DonHang — đơn từ website
 Mỗi đơn là 1 dòng: thời gian, họ tên, SĐT, cây đàn, mã đàn, số lượng, hình thức nhận, địa chỉ, ghi chú, **Trạng thái** (`Mới`).

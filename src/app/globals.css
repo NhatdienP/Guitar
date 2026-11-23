@@ -58,3 +58,127 @@ button[disabled][aria-busy="true"] {
   opacity: 0.65;
   cursor: wait !important;
 }
+
+/* Product photo gallery (src/components/Gallery.tsx) */
+.jg-gal-track {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.jg-gal-track::-webkit-scrollbar {
+  display: none;
+}
+.jg-gal-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  scroll-snap-align: start;
+  cursor: zoom-in;
+}
+.jg-gal-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.jg-gal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(251, 248, 242, 0.92);
+  color: #1c1714;
+  box-shadow: 0 4px 14px rgba(28, 23, 20, 0.16);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.jg-gal-arrow:hover {
+  background: #b0471a;
+  color: #fff;
+}
+.jg-gal-count {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(28, 23, 20, 0.7);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.jg-gal-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 2px;
+}
+.jg-gal-thumb {
+  flex: 0 0 72px;
+  height: 72px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e9dfcf;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.jg-gal-thumb:hover,
+.jg-gal-thumb.on {
+  opacity: 1;
+}
+.jg-gal-thumb.on {
+  border-color: #b0471a;
+}
+.jg-gal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.jg-gal-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px;
+  background: rgba(20, 16, 13, 0.94);
+  cursor: zoom-out;
+}
+.jg-gal-zoom img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: default;
+}
+.jg-gal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+}

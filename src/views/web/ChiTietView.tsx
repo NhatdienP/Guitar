@@ -1,6 +1,7 @@
 /* Auto-generated from the J.guitar prototype (ChiTiet.dc.html). */
 /* eslint-disable @next/next/no-img-element */
 import { Fragment } from 'react';
+import Gallery from '@/components/Gallery';
 import Link from 'next/link';
 import Card from '@/components/Card';
 import Footer from '@/components/Footer';
@@ -15,9 +16,7 @@ export default function ChiTietView({ vm }: { vm: any }) {
 <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "24px" }}>
 <nav aria-label="Breadcrumb" style={{ fontSize: "13px", color: "#74695d" }}><Link href="/" style={{ color: "#74695d", textDecoration: "none" }}>Trang chủ</Link> / <Link href="/san-pham" style={{ color: "#74695d", textDecoration: "none" }}>Sản phẩm</Link> / <span style={{ color: "#1c1714" }}>{vm.p.title}</span></nav>
 <div className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1fr)", gap: "56px", alignItems: "start" }}>
-<div style={{ aspectRatio: "1 / 1", borderRadius: "24px", overflow: "hidden", background: "#e9dfcf" }}>
-<img src={vm.p.img} alt={vm.p.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-</div>
+<Gallery images={vm.p.imgs} title={vm.p.title} variant="web" radius={24} />
 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "16px", paddingTop: "4px" }}>
 <span style={{ padding: "6px 14px", borderRadius: "999px", background: "#fbe9dd", color: "#8a3612", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.1em" }}>{vm.typeUp}</span>
 <h1 style={{ margin: "0", fontSize: "40px", lineHeight: "1.05", fontWeight: "800", letterSpacing: "-0.035em" }}>{vm.p.title}</h1>

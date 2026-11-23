@@ -43,14 +43,28 @@ function parseType(v: unknown): Product['type'] {
   return TYPES.find((t) => t.toLowerCase() === s) || (s.includes('kiện') ? 'Phụ kiện' : s.startsWith('c') ? 'Classic' : 'Acoustic');
 }
 
-/** Accepts /images/..., full https URLs, and Google Drive share links. */
+/** Accepts /images/..., full https URLs, and Google Drive share links. Returns '' if unusable. */
 export function imageUrl(v: unknown) {
   const s = str(v);
-  if (!s) return PLACEHOLDER;
+  if (!s) return '';
   const drive = s.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]{20,})/);
-  if (drive) return `https://lh3.googleusercontent.com/d/${drive[1]}=w1200`;
+  if (drive) return `https://lh3.googleusercontent.com/d/${drive[1]}=w1600`;
   if (s.startsWith('/') || /^https?:\/\//.test(s)) return s;
-  return PLACEHOLDER;
+  return '';
+}
+
+/**
+ * The "anh" cell may hold several links separated by commas (also | or new lines).
+ * We only split where the next part starts a new link, so commas inside a URL
+ * (e.g. image-CDN params like w_400,h_300) are kept.
+ */
+export function imageList(v: unknown) {
+  const list = str(v)
+    .split(/\s*[,|\n]\s*(?=https?:\/\/|\/)/)
+    .map(imageUrl)
+    .filter(Boolean);
+  const unique = [...new Set(list)];
+  return unique.length ? unique : [PLACEHOLDER];
 }
 
 const hidden = (v: unknown) => v === false || /^(false|0|no|không|an|ẩn)$/i.test(str(v));
@@ -65,6 +79,7 @@ export function rowsToProducts(rows: Row[]): Product[] {
     let id = slugify(str(r.id) || title) || `dan-${out.length + 1}`;
     while (seen.has(id)) id += '-2';
     seen.add(id);
+    const imgs = imageList(r.anh);
     out.push({
       id,
       title,
@@ -74,7 +89,8 @@ export function rowsToProducts(rows: Row[]): Product[] {
       priceText: fmt(price),
       short: str(r.mo_ta_ngan),
       desc: str(r.mo_ta),
-      img: imageUrl(r.anh),
+      img: imgs[0],
+      imgs,
       specs: SPEC_COLS.map((c, i) => ({ k: SPEC_LABELS[i], v: str(r[c]) })).filter((s) => s.v),
       points: str(r.diem_noi_bat)
         .split('|')

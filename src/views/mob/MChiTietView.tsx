@@ -1,6 +1,7 @@
 /* Auto-generated from the J.guitar prototype (MChiTiet.dc.html). */
 /* eslint-disable @next/next/no-img-element */
 import { Fragment } from 'react';
+import Gallery from '@/components/Gallery';
 import Link from 'next/link';
 import Card from '@/components/Card';
 import MFooter from '@/components/MFooter';
@@ -13,9 +14,7 @@ export default function MChiTietView({ vm }: { vm: any }) {
 <div style={{ display: "block", position: "sticky", top: "0", zIndex: "60" }}><MHeader go={vm.go} /></div>
 <section style={{ padding: "4px 16px 48px", display: "flex", flexDirection: "column", gap: "16px" }}>
 <nav aria-label="Breadcrumb" style={{ fontSize: "12px", color: "#74695d" }}><Link href="/" style={{ color: "#74695d", textDecoration: "none" }}>Trang chủ</Link> / <Link href="/san-pham" style={{ color: "#74695d", textDecoration: "none" }}>Sản phẩm</Link></nav>
-<div style={{ aspectRatio: "1 / 1", borderRadius: "20px", overflow: "hidden", background: "#e9dfcf" }}>
-<img src={vm.p.img} alt={vm.p.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-</div>
+<Gallery images={vm.p.imgs} title={vm.p.title} variant="mob" radius={20} />
 <span style={{ alignSelf: "flex-start", padding: "6px 12px", borderRadius: "999px", background: "#fbe9dd", color: "#8a3612", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.1em", marginTop: "6px" }}>{vm.typeUp}</span>
 <h1 style={{ margin: "0", fontSize: "27px", lineHeight: "1.08", fontWeight: "800", letterSpacing: "-0.035em" }}>{vm.p.title}</h1>
 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
