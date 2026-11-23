@@ -159,6 +159,172 @@ function sortOrdersNow() {
   sortOrders_(SpreadsheetApp.getActiveSpreadsheet().getSheetByName(ORDER_SHEET));
 }
 
+// ---------------------------------------------------------------------------
+// Lưu trữ: đơn "Hoàn thành" / "Huỷ" quá ARCHIVE_AFTER_DAYS ngày được chuyển sang tab LuuTru,
+// trình bày theo từng tháng (dòng tiêu đề tháng + nhóm thu gọn được). Không xoá đơn nào.
+// Chạy tự động mỗi đêm (bật bằng menu J.guitar → Bật tự động lưu trữ), hoặc bấm tay từ menu.
+// ---------------------------------------------------------------------------
+var ARCHIVE_SHEET = 'LuuTru';
+var ARCHIVE_AFTER_DAYS = 30;
+var DONE_STATUSES = ['Hoàn thành', 'Huỷ'];
+var TZ = 'Asia/Ho_Chi_Minh';
+
+/** Menu "J.guitar" trên thanh công cụ của Sheet. */
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('J.guitar')
+    .addItem('Sắp xếp lại đơn hàng', 'sortOrdersNow')
+    .addItem('Lưu trữ đơn đã xong ngay', 'archiveOrders')
+    .addSeparator()
+    .addItem('Bật tự động lưu trữ mỗi đêm', 'installArchiveTrigger')
+    .addToUi();
+}
+
+/** Chạy 1 lần: đặt lịch archiveOrders chạy mỗi đêm khoảng 2–3 giờ sáng (giờ Việt Nam). */
+function installArchiveTrigger() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === 'archiveOrders') ScriptApp.deleteTrigger(t);
+  });
+  ScriptApp.newTrigger('archiveOrders').timeBased().everyDays(1).atHour(2).inTimezone(TZ).create();
+  toast_('Đã bật tự động lưu trữ: mỗi đêm khoảng 2–3 giờ sáng.');
+}
+
+function archiveOrders() {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(30000);
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sh = ss.getSheetByName(ORDER_SHEET);
+    if (!sh) return;
+    var ar = ss.getSheetByName(ARCHIVE_SHEET) || createArchiveSheet_(ss, sh);
+    var W = ORDER_HEADERS.length;
+    var n = sh.getLastRow() - 1;
+    if (n < 1) return toast_('Chưa có đơn nào để lưu trữ.');
+
+    var cutoff = Date.now() - ARCHIVE_AFTER_DAYS * 864e5;
+    var rows = sh.getRange(2, 1, n, W).getValues();
+    var keep = [], moved = [];
+    rows.forEach(function (r) {
+      if (r.join('') === '') return;
+      var done = DONE_STATUSES.indexOf(String(r[W - 1]).trim()) >= 0;
+      var old = r[0] instanceof Date && r[0].getTime() < cutoff;
+      (done && old ? moved : keep).push(r);
+    });
+    if (!moved.length) return toast_('Không có đơn Hoàn thành/Huỷ nào cũ hơn ' + ARCHIVE_AFTER_DAYS + ' ngày.');
+
+    // 1) Ghi tab LuuTru trước (nếu lỗi giữa chừng thì đơn vẫn còn ở DonHang, không mất).
+    writeArchive_(ar, readArchiveRecords_(ar).concat(moved));
+
+    // 2) Viết lại DonHang chỉ với các đơn còn lại (giữ nguyên thứ tự).
+    sh.getRange(2, 1, n, W).clearContent();
+    if (keep.length) sh.getRange(2, 1, keep.length, W).setValues(keep.map(sanitizeRow_));
+    toast_('Đã chuyển ' + moved.length + ' đơn sang tab ' + ARCHIVE_SHEET + '.');
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+/** Các đơn đang có trong LuuTru (bỏ qua dòng tiêu đề tháng). */
+function readArchiveRecords_(ar) {
+  var W = ORDER_HEADERS.length;
+  var m = ar.getLastRow() - 1;
+  if (m < 1) return [];
+  return ar.getRange(2, 1, m, W).getValues().filter(function (r) { return r[0] instanceof Date; });
+}
+
+/** Viết lại toàn bộ LuuTru: mới nhất ở trên, mỗi tháng 1 dòng tiêu đề + nhóm thu gọn. */
+function writeArchive_(ar, records) {
+  var W = ORDER_HEADERS.length;
+  records.sort(function (a, b) { return b[0].getTime() - a[0].getTime(); });
+
+  // Gỡ các nhóm tháng cũ.
+  var last = ar.getLastRow();
+  if (last > 1) {
+    ar.getRange(2, 1, last - 1, 1).getValues().forEach(function (v, i) {
+      if (String(v[0]).indexOf('Tháng ') === 0) {
+        try { var g = ar.getRowGroup(i + 3, 1); if (g) g.remove(); } catch (e) {}
+      }
+    });
+  }
+
+  var out = [], heads = [], groups = [];
+  var i = 0;
+  while (i < records.length) {
+    var key = Utilities.formatDate(records[i][0], TZ, 'MM/yyyy');
+    var j = i, done = 0, cancel = 0;
+    while (j < records.length && Utilities.formatDate(records[j][0], TZ, 'MM/yyyy') === key) {
+      var st = String(records[j][W - 1]).trim();
+      if (st === 'Hoàn thành') done++; else if (st === 'Huỷ') cancel++;
+      j++;
+    }
+    var head = new Array(W).fill('');
+    head[0] = 'Tháng ' + key;
+    head[1] = (j - i) + ' đơn · ' + done + ' hoàn thành · ' + cancel + ' huỷ';
+    heads.push(out.length + 2);
+    out.push(head);
+    groups.push([out.length + 2, j - i]);
+    for (var k = i; k < j; k++) out.push(sanitizeRow_(records[k]));
+    i = j;
+  }
+
+  var need = out.length + 1;
+  if (ar.getMaxRows() < need + 20) ar.insertRowsAfter(ar.getMaxRows(), need + 200 - ar.getMaxRows());
+  var body = ar.getRange(2, 1, ar.getMaxRows() - 1, W);
+  body.clearContent().clearFormat();
+  if (!out.length) return;
+
+  var data = ar.getRange(2, 1, out.length, W);
+  data.setValues(out)
+    .setFontSize(10).setFontColor('#1c1714').setVerticalAlignment('middle')
+    .setWrapStrategy(SpreadsheetApp.WrapStrategy.CLIP);
+  ar.getRange(2, 1, out.length, 1).setNumberFormat('dd/MM/yyyy HH:mm').setFontColor('#6b6157');
+  ar.getRange(2, 2, out.length, 1).setFontWeight('bold');
+  ar.getRange(2, 3, out.length, 1).setFontWeight('bold').setFontColor('#b0471a');
+  ar.getRange(2, 5, out.length, 1).setFontSize(9).setFontColor('#74695d');
+  ar.getRange(2, 6, out.length, 1).setHorizontalAlignment('center');
+  ar.getRange(2, W, out.length, 1).setHorizontalAlignment('center').setFontWeight('bold');
+  ar.setRowHeights(2, out.length, 30);
+
+  heads.forEach(function (r) {
+    ar.getRange(r, 1, 1, W)
+      .setBackground('#efe6d8').setFontWeight('bold').setFontColor('#1c1714')
+      .setWrapStrategy(SpreadsheetApp.WrapStrategy.OVERFLOW)
+      .setBorder(true, null, true, null, null, null, '#c9bba5', SpreadsheetApp.BorderStyle.SOLID);
+    ar.getRange(r, 1).setFontSize(11).setNumberFormat('@');
+    ar.getRange(r, 2).setFontWeight('normal').setFontColor('#6b6157').setFontStyle('italic');
+    ar.setRowHeight(r, 36);
+  });
+
+  ar.setRowGroupControlPosition(SpreadsheetApp.GroupControlTogglePosition.BEFORE);
+  groups.forEach(function (g, idx) {
+    ar.getRange(g[0], 1, g[1], 1).shiftRowGroupDepth(1);
+    if (idx > 0) { try { ar.getRowGroup(g[0], 1).collapse(); } catch (e) {} } // tháng mới nhất mở sẵn
+  });
+}
+
+function createArchiveSheet_(ss, src) {
+  var W = ORDER_HEADERS.length;
+  var ar = ss.insertSheet(ARCHIVE_SHEET);
+  ar.getRange(1, 1, 1, W).setValues([ORDER_HEADERS]);
+  src.getRange(1, 1, 1, W).copyTo(ar.getRange(1, 1, 1, W), { formatOnly: true });
+  for (var c = 1; c <= W; c++) ar.setColumnWidth(c, src.getColumnWidth(c));
+  ar.setFrozenRows(1);
+  ar.getRange('C:C').setNumberFormat('@');
+  return ar;
+}
+
+/** Ghi lại một dòng đơn an toàn: số điện thoại giữ số 0, chữ bắt đầu bằng = + - @ không thành công thức. */
+function sanitizeRow_(r) {
+  return r.map(function (v, i) {
+    if (i === 2 && v !== '') return "'" + String(v).replace(/^'/, '');
+    return typeof v === 'string' ? safe_(v) : v;
+  });
+}
+
+function toast_(msg) {
+  try { SpreadsheetApp.getActiveSpreadsheet().toast(msg, 'J.guitar', 8); } catch (e) {}
+}
+
 /** Đọc tab SanPham: dòng 1 là tiêu đề (id, ten, hang, ...), mỗi dòng sau là 1 cây đàn. */
 function readProducts_() {
   var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(PRODUCT_SHEET);

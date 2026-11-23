@@ -99,3 +99,8 @@ Sửa xong phải **Deploy → Manage deployments → ✏️ Edit → Version: N
 3. (Tuỳ chọn) chọn hàm **`sortOrdersNow`** → ▶ **Run** để sắp xếp lại ngay các đơn đang có.
 
 Tab **DonHang** tự sắp xếp: theo Trạng thái (Mới → Đã gọi xác nhận → Đang giao → Hoàn thành → Huỷ), trong mỗi trạng thái đơn mới nhất ở trên. Bảng sắp xếp lại khi có đơn mới và mỗi khi bạn đổi Trạng thái.
+
+## Lưu trữ đơn cũ & lọc theo thời gian
+- Đơn **Hoàn thành** / **Huỷ** quá 30 ngày được chuyển sang tab **LuuTru** (không xoá đơn nào), trình bày theo từng tháng: mỗi tháng có dòng tiêu đề "Tháng MM/yyyy · N đơn · X hoàn thành · Y huỷ", bấm dấu +/– bên trái để mở/thu gọn tháng. Muốn đổi số ngày: sửa `ARCHIVE_AFTER_DAYS` trong Code.gs.
+- Bật chạy tự động mỗi đêm: menu **J.guitar → Bật tự động lưu trữ mỗi đêm** (chỉ cần 1 lần, Google sẽ hỏi quyền). Muốn chạy ngay: **J.guitar → Lưu trữ đơn đã xong ngay**.
+- Lọc theo thời gian: **Data → Filter views** (hoặc biểu tượng phễu) → chọn *Hôm nay*, *7 ngày qua*, *30 ngày qua*, *Đơn cần xử lý* (tab DonHang) hoặc *12 tháng qua*, *Chỉ đơn Hoàn thành*, *Chỉ đơn Huỷ* (tab LuuTru). Bộ lọc chỉ đổi cách bạn xem, không ảnh hưởng người khác và không xoá dữ liệu. Muốn khoảng ngày tuỳ ý: mở một filter view, bấm phễu ở cột Thời gian → Lọc theo điều kiện → *Ngày ở giữa*.
