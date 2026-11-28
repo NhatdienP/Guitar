@@ -89,7 +89,7 @@ export default function MHomeView({ vm }: { vm: any }) {
 <img src="/images/dan-acoustic-am.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.05) 25%, rgba(28,23,20,0.75) 100%)" }}></span>
 <blockquote style={{ position: "relative", margin: "0", color: "#fff", display: "flex", flexDirection: "column", gap: "14px" }}>
-<p style={{ margin: "0", fontSize: "25px", lineHeight: "1.18", fontWeight: "700", letterSpacing: "-0.04em" }}>“Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng.”</p>
+<p style={{ margin: "0", fontSize: "25px", lineHeight: "1.18", fontWeight: "700", letterSpacing: "-0.04em" }}>“Một cây đàn hay không chỉ tạo nên âm nhạc, mà còn đánh thức người nghệ sĩ trong bạn.”</p>
 </blockquote>
 </div>
 </section>
