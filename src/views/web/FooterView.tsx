@@ -22,13 +22,13 @@ export default function FooterView({ vm }: { vm: any }) {
 </nav>
 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
 <h3 className="jg-fh">Shop</h3>
-<span style={{ color: "#c2b2a1", fontSize: "15px", lineHeight: "1.4" }}>720/98/10E Lạc Long Quân, Phường Tân Hòa, TP.HCM</span>
-<span style={{ color: "#c2b2a1", fontSize: "15px", lineHeight: "1.4" }}>9:00 – 21:00 mỗi ngày</span>
-<a className="jg-fl" href="tel:0834777123" style={{ color: "#f4eee3", fontWeight: "600" }}>0834 777 123</a>
+<a href="https://maps.app.goo.gl/7j8eoVuhq3MCX4qh8" target="_blank" rel="noopener" className="jg-fl" style={{ display: "flex", alignItems: "flex-start", gap: "10px", color: "#c2b2a1", fontSize: "15px", lineHeight: "1.45", textDecoration: "none" }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e08a5a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: "none", marginTop: "2px" }}><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg><span>720/98/10E Lạc Long Quân, Phường Tân Hòa, TP. Hồ Chí Minh</span></a>
+<span style={{ display: "flex", alignItems: "flex-start", gap: "10px", color: "#c2b2a1", fontSize: "15px", lineHeight: "1.45", textDecoration: "none" }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e08a5a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: "none", marginTop: "2px" }}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><span>9:00 – 21:00, Thứ 2 – Chủ Nhật</span></span>
+<a className="jg-fl" href="tel:0834777123" style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "15px", lineHeight: "1.45", color: "#f4eee3", fontWeight: "600", textDecoration: "none" }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e08a5a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: "none", marginTop: "2px" }}><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" /></svg><span>0834 777 123</span></a>
 </div>
 </div>
 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", paddingTop: "24px", borderTop: "1px solid #4a3a30", color: "#a8988a", fontSize: "13px" }}>
-<span>© 2026 J.Guitar. Nội dung và hình ảnh mang tính minh hoạ.</span>
+<span>© 2026 J.Guitar. Bảo lưu mọi quyền.</span>
 <span>Thanh toán khi nhận hàng · Giao toàn quốc · Ảnh: Pexels</span>
 </div>
 </div>

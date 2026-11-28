@@ -109,7 +109,7 @@
 .v-web .jg-d{font-family:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif}
 .v-web .jg-fl{color:#c2b2a1;text-decoration:none;font-size:15px;line-height:1.4;transition:color .2s}
 .v-web .jg-fl:hover{color:#f4eee3}
-.v-web .jg-fh{margin:0 0 4px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#f4eee3}
+.v-web .jg-fh{margin:0 0 4px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:#fff}
 @media (max-width: 900px){.v-web .jg-fg{grid-template-columns:1fr 1fr !important}
 .v-web .jg-fb{grid-column:1 / -1}}
 
