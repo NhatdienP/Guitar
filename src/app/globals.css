@@ -218,8 +218,9 @@ button[disabled][aria-busy="true"] {
   text-align: left;
 }
 .jg-sug-web {
+  /* exactly as wide as the search box */
+  left: -1px;
   right: -1px;
-  width: 380px;
 }
 .jg-sug-mob {
   left: 0;
@@ -289,4 +290,25 @@ button[disabled][aria-busy="true"] {
   padding: 12px 10px;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* Desktop header while showing search suggestions: wider search box,
+   hotline and Zalo collapse to their icons so everything still fits. */
+.v-web .jg-sr {
+  transition: width 0.25s ease, border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.v-web .jg-hdr.searching .jg-sr {
+  width: 420px !important;
+}
+.v-web .jg-hdr.searching .jg-hl-t,
+.v-web .jg-hdr.searching .jg-zl-t {
+  display: none !important;
+}
+.v-web .jg-hdr.searching .jg-hl {
+  padding-left: 16px !important;
+}
+.v-web .jg-hdr.searching .jg-zl {
+  width: 42px;
+  padding: 0 !important;
+  justify-content: center;
 }

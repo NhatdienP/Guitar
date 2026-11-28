@@ -115,6 +115,8 @@ export function useSearchBox(query?: string, onQuery?: (q: string) => void) {
       if (open && active >= 0 && active < matches.length) goTo(`/san-pham/${matches[active].id}`);
       else goTo(searchHref);
     },
+    // Desktop header widens the search box and collapses hotline / Zalo to icons while suggesting.
+    expanded: !live && open && q.trim().length > 0,
     suggest: {
       show: !live && open && q.trim().length > 0,
       loading: !items,
