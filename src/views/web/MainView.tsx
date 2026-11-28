@@ -174,7 +174,7 @@ export default function MainView({ vm }: { vm: any }) {
 <section style={{ padding: "0 24px 88px" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "40px", flexWrap: "wrap", padding: "56px 56px", boxSizing: "border-box", borderRadius: "32px", background: "#b0471a", color: "#fff" }}>
 <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "15px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>SHOP TÂN HÒA · 9:00 – 21:00</span>
+<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "15px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>J.GUITAR SHOP · 9:00 – 21:00</span>
 <h2 style={{ margin: "0", fontSize: "40px", lineHeight: "1.08", fontWeight: "700", letterSpacing: "-0.03em" }}>Ghé thử đàn. Miễn phí,<br />không ép mua.</h2>
 </div>
 <div style={{ display: "flex", flexDirection: "column", gap: "14px", width: "380px", maxWidth: "100%" }}>
