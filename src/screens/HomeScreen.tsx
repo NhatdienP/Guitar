@@ -15,7 +15,7 @@ const SVC = [
 const CATS = [
   { t: 'Acoustic', d: 'Đệm hát · Fingerstyle', img: img.catAc, href: '/san-pham?loai=Acoustic' },
   { t: 'Classic', d: 'Dây nylon · Người mới', img: img.catCl, href: '/san-pham?loai=Classic' },
-  { t: 'Phụ kiện', d: 'Capo · Dây đàn · Bao đàn', img: img.setup, href: '/san-pham?loai=Ph%E1%BB%A5+ki%E1%BB%87n' },
+  { t: 'Phụ kiện', d: 'Capo · Dây đàn · Bao đàn', img: img.catPk, href: '/san-pham?loai=Ph%E1%BB%A5+ki%E1%BB%87n' },
 ];
 
 /** "Đàn mới về" slider (3 pages × 4) + FAQ accordion — shared state shape for both layouts. */

@@ -76,7 +76,7 @@ export default function MHomeView({ vm }: { vm: any }) {
 <section style={{ padding: "52px 20px", background: "#2a1e18", color: "#f4eee3", display: "flex", flexDirection: "column", gap: "16px" }}>
 <span style={{ alignSelf: "flex-start", padding: "7px 14px", border: "1px solid #5a473b", borderRadius: "999px", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.12em", color: "#c2b2a1" }}>VÌ SAO CHỌN J.GUITAR</span>
 <h2 style={{ margin: "0 0 12px", fontSize: "27px", lineHeight: "1.08", fontWeight: "700", letterSpacing: "-0.035em" }}>Mua đàn an tâm. Chơi đàn trọn vẹn.</h2>
-<img src="/images/setup-dan.jpg" alt="Kỹ thuật viên setup đàn: thay dây, đo action" style={{ width: "100%", height: "240px", objectFit: "cover", borderRadius: "24px", display: "block" }} />
+<img src="/images/setup-dan-v2.jpg" alt="Kỹ thuật viên thay dây, lên dây đàn acoustic" style={{ width: "100%", height: "240px", objectFit: "cover", borderRadius: "24px", display: "block" }} />
 {(vm.svc || []).map((v: any, _i6: number) => (<Fragment key={_i6}>
 <div style={{ display: "flex", flexDirection: "column", gap: "10px", padding: "24px", border: "1px solid #4a3a30", borderRadius: "22px", background: "#352720" }}>
 <span style={{ color: "#b0471a", fontWeight: "700", fontSize: "14px" }}>{v.n}</span>

@@ -1011,8 +1011,9 @@ export const img = {
   "showroom": "/images/shop-tuong-dan.jpg",
   "p1": "/images/e720928287285a2b17f404c99d98cfba.jpg",
   "p5": "/images/ee9379a3563ca310612fb4d60fd070da.jpg",
-  "catAc": "/images/f3ba41d582ce6f4126af6007183bae59.jpg",
-  "catCl": "/images/22db0d18d4dfc4745c25c5b1f421ba3b.jpg",
+  "catAc": "/images/danh-muc-acoustic.jpg",
+  "catCl": "/images/danh-muc-classic.jpg",
+  "catPk": "/images/danh-muc-phu-kien.jpg",
   "setup": "/images/95b47819316bef1aa19d9c9641940e0b.jpg",
   "stage": "/images/dan-acoustic-am.jpg",
   "about": "/images/6154ce685cfa2672e3cc7b6548eb3819.jpg"

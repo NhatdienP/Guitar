@@ -52,7 +52,7 @@ export default function MainView({ vm }: { vm: any }) {
 </div>
 <div className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.25fr) minmax(0, 1fr)", gap: "20px" }}>
 <Link className="jg-cat" href="/san-pham?loai=Acoustic" style={{ position: "relative", minHeight: "500px", borderRadius: "32px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "32px", textDecoration: "none", color: "#fff", backgroundColor: "#2a1e18" }}>
-<img src="/images/f3ba41d582ce6f4126af6007183bae59.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/danh-muc-acoustic.jpg" alt="Đàn acoustic dây sắt" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0) 40%, rgba(28,23,20,0.85) 100%)" }}></span>
 <span style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "flex-end", width: "100%", gap: "16px" }}>
 <span style={{ display: "flex", flexDirection: "column", gap: "8px" }}><strong className="jg-d" style={{ fontSize: "33px", letterSpacing: "-0.04em" }}>Acoustic</strong><span style={{ fontSize: "16px", opacity: "0.85" }}>Đệm hát · Fingerstyle</span></span>
@@ -61,7 +61,7 @@ export default function MainView({ vm }: { vm: any }) {
 </Link>
 <div style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: "20px" }}>
 <Link className="jg-cat" href="/san-pham?loai=Classic" style={{ position: "relative", minHeight: "240px", borderRadius: "32px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "32px", textDecoration: "none", color: "#fff", backgroundColor: "#2a1e18" }}>
-<img src="/images/22db0d18d4dfc4745c25c5b1f421ba3b.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/danh-muc-classic.jpg" alt="Đàn classic dây nylon" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0) 40%, rgba(28,23,20,0.85) 100%)" }}></span>
 <span style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "flex-end", width: "100%" }}>
 <span style={{ display: "flex", flexDirection: "column", gap: "6px" }}><strong className="jg-d" style={{ fontSize: "27px", letterSpacing: "-0.04em" }}>Classic</strong><span style={{ fontSize: "15px", opacity: "0.85" }}>Dây nylon · Người mới</span></span>
@@ -69,7 +69,7 @@ export default function MainView({ vm }: { vm: any }) {
 </span>
 </Link>
 <Link className="jg-cat" href="/san-pham?loai=Ph%E1%BB%A5+ki%E1%BB%87n" style={{ position: "relative", minHeight: "240px", borderRadius: "32px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "32px", textDecoration: "none", color: "#fff", backgroundColor: "#2a1e18" }}>
-<img src="/images/95b47819316bef1aa19d9c9641940e0b.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/danh-muc-phu-kien.jpg" alt="Phụ kiện: capo, pick, dây đàn, tuner, bao đàn" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0) 40%, rgba(28,23,20,0.85) 100%)" }}></span>
 <span style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "flex-end", width: "100%" }}>
 <span style={{ display: "flex", flexDirection: "column", gap: "6px" }}><strong className="jg-d" style={{ fontSize: "27px", letterSpacing: "-0.04em" }}>Phụ kiện</strong><span style={{ fontSize: "15px", opacity: "0.85" }}>Capo · Dây đàn · Bao đàn</span></span>
@@ -120,7 +120,7 @@ export default function MainView({ vm }: { vm: any }) {
 <h2 style={{ margin: "0", fontSize: "46px", lineHeight: "1.05", fontWeight: "700", letterSpacing: "-0.035em" }}>Mua đàn an tâm. Chơi đàn trọn vẹn.</h2>
 </div>
 <div className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)", gap: "20px" }}>
-<div style={{ position: "relative", minHeight: "380px", borderRadius: "32px", overflow: "hidden", background: "#352720" }}><img src="/images/setup-dan.jpg" alt="Kỹ thuật viên setup đàn: thay dây, đo action" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} /></div>
+<div style={{ position: "relative", minHeight: "380px", borderRadius: "32px", overflow: "hidden", background: "#352720" }}><img src="/images/setup-dan-v2.jpg" alt="Kỹ thuật viên thay dây, lên dây đàn acoustic" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} /></div>
 <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gridAutoRows: "1fr", gap: "20px" }}>
 {(vm.svc || []).map((v: any, _i5: number) => (<Fragment key={_i5}>
 <div className="jg-svc" style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", gap: "16px", padding: "32px 32px 34px", border: "1px solid #4a3a30", borderRadius: "28px", background: "#352720", transition: "border-color .25s" }}>
