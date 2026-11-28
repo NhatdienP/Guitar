@@ -86,8 +86,8 @@ export default function MHomeView({ vm }: { vm: any }) {
 </section>
 <section style={{ padding: "52px 20px 0" }}>
 <div style={{ position: "relative", height: "380px", borderRadius: "24px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "28px", boxSizing: "border-box", backgroundColor: "#352720" }}>
-<img src="/images/ddeb6e14c8feeb4a4b1e9e61c162874a.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
-<span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.1) 20%, rgba(28,23,20,0.88) 100%)" }}></span>
+<img src="/images/dan-acoustic-am.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%" }} />
+<span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.05) 25%, rgba(28,23,20,0.75) 100%)" }}></span>
 <blockquote style={{ position: "relative", margin: "0", color: "#fff", display: "flex", flexDirection: "column", gap: "14px" }}>
 <p style={{ margin: "0", fontSize: "25px", lineHeight: "1.18", fontWeight: "700", letterSpacing: "-0.04em" }}>“Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng.”</p>
 </blockquote>

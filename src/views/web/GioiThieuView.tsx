@@ -81,7 +81,7 @@ export default function GioiThieuView({ vm }: { vm: any }) {
 </section>
 <section style={{ padding: "0 24px 104px" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", minHeight: "440px", borderRadius: "32px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "56px", boxSizing: "border-box", backgroundColor: "#2a1e18" }}>
-<img src="/images/ddeb6e14c8feeb4a4b1e9e61c162874a.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/dan-acoustic-am.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(28,23,20,0.88) 0%, rgba(28,23,20,0.45) 60%, rgba(28,23,20,0.2) 100%)" }}></span>
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "24px", maxWidth: "640px", color: "#fff" }}>
 <p className="jg-d" style={{ margin: "0", fontSize: "38px", lineHeight: "1.15", fontWeight: "700", letterSpacing: "-0.03em" }}>Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng, và một người chơi tự do.</p>

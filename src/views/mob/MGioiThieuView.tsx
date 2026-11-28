@@ -77,7 +77,7 @@ export default function MGioiThieuView({ vm }: { vm: any }) {
 </section>
 <section style={{ padding: "0 16px 48px" }}>
 <div style={{ position: "relative", minHeight: "420px", borderRadius: "24px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "24px", boxSizing: "border-box", backgroundColor: "#2a1e18" }}>
-<img src="/images/ddeb6e14c8feeb4a4b1e9e61c162874a.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/dan-acoustic-am.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.2) 0%, rgba(28,23,20,0.9) 75%)" }}></span>
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "18px", width: "100%", color: "#fff" }}>
 <p className="jg-d" style={{ margin: "0", fontSize: "25px", lineHeight: "1.2", fontWeight: "700", letterSpacing: "-0.03em" }}>Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng, và một người chơi tự do.</p>

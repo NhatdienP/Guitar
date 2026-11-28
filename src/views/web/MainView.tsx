@@ -137,8 +137,8 @@ export default function MainView({ vm }: { vm: any }) {
 </section>
 <section style={{ padding: "88px 24px 0" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", borderRadius: "32px", overflow: "hidden", minHeight: "460px", display: "flex", alignItems: "flex-end", padding: "48px", boxSizing: "border-box", backgroundColor: "#352720" }}>
-<img src="/images/ddeb6e14c8feeb4a4b1e9e61c162874a.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
-<span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.1) 30%, rgba(28,23,20,0.85) 100%)" }}></span>
+<img src="/images/dan-acoustic-am.jpg" alt="Người chơi đàn acoustic trong căn phòng ấm" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "70% 55%" }} />
+<span style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(28,23,20,0.72) 0%, rgba(28,23,20,0.35) 55%, rgba(28,23,20,0.05) 100%)" }}></span>
 <blockquote style={{ position: "relative", margin: "0", color: "#fff", display: "flex", flexDirection: "column", gap: "20px" }}>
 <p style={{ margin: "0", fontSize: "40px", lineHeight: "1.12", fontWeight: "700", letterSpacing: "-0.03em" }}>“Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng.”</p>
 </blockquote>

@@ -1014,7 +1014,7 @@ export const img = {
   "catAc": "/images/f3ba41d582ce6f4126af6007183bae59.jpg",
   "catCl": "/images/22db0d18d4dfc4745c25c5b1f421ba3b.jpg",
   "setup": "/images/95b47819316bef1aa19d9c9641940e0b.jpg",
-  "stage": "/images/ddeb6e14c8feeb4a4b1e9e61c162874a.jpg",
+  "stage": "/images/dan-acoustic-am.jpg",
   "about": "/images/6154ce685cfa2672e3cc7b6548eb3819.jpg"
 } as const;
 
