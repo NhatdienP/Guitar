@@ -49,7 +49,6 @@ export default function MainView({ vm }: { vm: any }) {
 <span style={{ padding: "7px 14px", border: "1px solid #e2d8c7", borderRadius: "999px", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#6b6157" }}>DANH MỤC</span>
 <h2 style={{ margin: "0", fontSize: "33px", lineHeight: "1.1", fontWeight: "700", letterSpacing: "-0.03em" }}>Chọn theo cách bạn chơi nhạc.</h2>
 </div>
-<Link className="jg-btn" href="/san-pham" style={{ padding: "13px 23px", borderRadius: "999px", background: "#fbf8f2", border: "1px solid #e2d8c7", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Xem tất cả</Link>
 </div>
 <div className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.25fr) minmax(0, 1fr)", gap: "20px" }}>
 <Link className="jg-cat" href="/san-pham?loai=Acoustic" style={{ position: "relative", minHeight: "500px", borderRadius: "32px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "32px", textDecoration: "none", color: "#fff", backgroundColor: "#2a1e18" }}>

@@ -33,7 +33,6 @@ export default function MHomeView({ vm }: { vm: any }) {
 <section style={{ padding: "52px 20px", display: "flex", flexDirection: "column", gap: "16px" }}>
 <span style={{ alignSelf: "flex-start", padding: "7px 14px", border: "1px solid #e2d8c7", borderRadius: "999px", background: "#fbf8f2", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#6b6157" }}>DANH MỤC</span>
 <h2 style={{ margin: "0", fontSize: "24px", lineHeight: "1.12", fontWeight: "700", letterSpacing: "-0.03em" }}>Chọn theo cách bạn chơi nhạc.</h2>
-<Link href="/san-pham" style={{ alignSelf: "flex-start", padding: "13px 24px", borderRadius: "999px", background: "#fbf8f2", border: "1px solid #e2d8c7", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "none", marginBottom: "12px" }}>Xem tất cả</Link>
 {(vm.cats || []).map((c: any, _i2: number) => (<Fragment key={_i2}>
 <Link href={c.href} style={{ position: "relative", height: "176px", borderRadius: "24px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "22px", boxSizing: "border-box", textDecoration: "none", color: "#fff", backgroundColor: "#2a1e18" }}>
 <img src={c.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
