@@ -13,13 +13,13 @@ export default function SanPhamView({ vm }: { vm: any }) {
 <section style={{ padding: "32px 24px 88px" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "flex-start", gap: "32px" }}>
 <aside aria-label="Bộ lọc sản phẩm" style={{ flex: "0 0 252px", position: "sticky", top: "96px", boxSizing: "border-box", maxHeight: "calc(100vh - 116px)", display: "flex", flexDirection: "column", background: "#fbf8f2", border: "1px solid #e2d8c7", borderRadius: "16px", overflow: "hidden" }}>
-<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 18px", background: "#f4eee3", borderBottom: "1px solid #e2d8c7" }}>
+<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 18px", background: "#e9dfcf", borderBottom: "1px solid #d9cbb5" }}>
 <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: "700", fontSize: "15px", color: "#1c1714" }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1c1714" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" /></svg>Bộ lọc</span>
 {(vm.hasFilter) && (<>
 <button type="button" onClick={vm.clearAll} style={{ border: "0", background: "none", padding: "0", font: "inherit", fontSize: "13px", fontWeight: "600", color: "#b0471a", cursor: "pointer" }}>Xoá tất cả</button>
 </>)}
 </div>
-<div className="jg-fsc" style={{ flex: "1 1 auto", minHeight: "0", overflowY: "auto", overscrollBehavior: "contain" }}>
+<div className="jg-fsc" onScroll={vm.fscScroll} style={{ flex: "1 1 auto", minHeight: "0", overflowY: "auto", overscrollBehavior: "contain" }}>
 <fieldset aria-label="Danh mục" style={{ margin: "0", padding: "16px 10px 12px", border: "0", borderBottom: "1px solid #efe6d8", display: "flex", flexDirection: "column", gap: "2px" }}>
 <div className="jg-flt" aria-hidden="true">Danh mục</div>
 {(vm.types || []).map((o: any, _i1: number) => (<Fragment key={_i1}>

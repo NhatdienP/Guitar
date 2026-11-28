@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type ChangeEvent } from 'react';
+import { useEffect, useState, type ChangeEvent, type UIEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SanPhamView from '@/views/web/SanPhamView';
 import MSanPhamView from '@/views/mob/MSanPhamView';
@@ -145,6 +145,13 @@ export default function ProductsScreen({ products, brands: BRANDS }: { products:
     brandsShown: more ? brandOpts : brandOpts.slice(0, 6),
     moreLabel: more ? 'Thu gọn' : `Xem thêm ${Math.max(0, brandOpts.length - 6)} hãng`,
     toggleMore: () => setMore((m) => !m),
+    // Show the filter list's scrollbar only while it is scrolling.
+    fscScroll: (e: UIEvent<HTMLDivElement>) => {
+      const el = e.currentTarget as HTMLDivElement & { _hideT?: ReturnType<typeof setTimeout> };
+      el.classList.add('scrolling');
+      clearTimeout(el._hideT);
+      el._hideT = setTimeout(() => el.classList.remove('scrolling'), 900);
+    },
     canMore: brandOpts.length > 6,
     caret: sortOpen ? 'rotate(180deg)' : 'none',
     sorts: SORTS.map(([k, label]) => ({

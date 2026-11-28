@@ -29,9 +29,12 @@
 .v-web a:hover{color:#8a3612}
 .v-web .jg-ck{position:relative;display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:8px;font-size:14.5px;color:#1c1714;cursor:pointer;transition:background .15s}
 .v-web .jg-ck:hover{background:#f1e9dc}
-.v-web .jg-fsc{scrollbar-width:thin;scrollbar-color:#d8ccb9 transparent}
+/* Filter list scrollbar: hidden until the list is being scrolled (class toggled in ProductsScreen). */
+.v-web .jg-fsc{scrollbar-width:thin;scrollbar-color:transparent transparent}
+.v-web .jg-fsc.scrolling{scrollbar-color:#cdbfa9 transparent}
 .v-web .jg-fsc::-webkit-scrollbar{width:6px}
-.v-web .jg-fsc::-webkit-scrollbar-thumb{background:#d8ccb9;border-radius:6px}
+.v-web .jg-fsc::-webkit-scrollbar-thumb{background:transparent;border-radius:6px}
+.v-web .jg-fsc.scrolling::-webkit-scrollbar-thumb{background:#cdbfa9}
 .v-web .jg-ck input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
 .v-web .jg-box{flex:none;width:18px;height:18px;box-sizing:border-box;border:1.5px solid #ddd2c0;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
 .v-web .jg-box svg{opacity:0;transition:opacity .15s}
