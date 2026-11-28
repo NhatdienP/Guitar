@@ -14,7 +14,7 @@ export default function MainView({ vm }: { vm: any }) {
 <section style={{ padding: "32px 24px 80px" }}>
 <div className="jg-2col" style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "minmax(0, 1.15fr) minmax(0, 1fr)", gap: "44px", alignItems: "center" }}>
 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "22px" }}>
-<span style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "8px 16px", border: "1px solid #e2d8c7", borderRadius: "999px", background: "#fbf8f2", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#6b6157" }}><span style={{ width: "7px", height: "7px", borderRadius: "999px", background: "#b0471a" }}></span>SHOWROOM SÀI GÒN · SINCE 2014</span>
+<span style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "8px 16px", border: "1px solid #e2d8c7", borderRadius: "999px", background: "#fbf8f2", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#6b6157" }}><span style={{ width: "7px", height: "7px", borderRadius: "999px", background: "#b0471a" }}></span>SHOP SÀI GÒN · SINCE 2014</span>
 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
 <h1 className="jg-h1" style={{ margin: "0", fontSize: "40px", lineHeight: "1.1", fontWeight: "800", letterSpacing: "-0.035em", whiteSpace: "nowrap" }}>Đàn Guitar Nhật Bãi Tuyển Chọn</h1>
 <p style={{ margin: "0", fontSize: "21px", fontWeight: "700", letterSpacing: "-0.02em", color: "#b0471a" }}>Âm Thanh Chuẩn Nhật, Giá Trị Vượt Thời Gian</p>
@@ -56,7 +56,7 @@ export default function MainView({ vm }: { vm: any }) {
 <img src="/images/f3ba41d582ce6f4126af6007183bae59.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0) 40%, rgba(28,23,20,0.85) 100%)" }}></span>
 <span style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "flex-end", width: "100%", gap: "16px" }}>
-<span style={{ display: "flex", flexDirection: "column", gap: "8px" }}><strong className="jg-d" style={{ fontSize: "33px", letterSpacing: "-0.04em" }}>Acoustic</strong><span style={{ fontSize: "16px", opacity: "0.85" }}>Đệm hát · Fingerstyle · 200+ mẫu</span></span>
+<span style={{ display: "flex", flexDirection: "column", gap: "8px" }}><strong className="jg-d" style={{ fontSize: "33px", letterSpacing: "-0.04em" }}>Acoustic</strong><span style={{ fontSize: "16px", opacity: "0.85" }}>Đệm hát · Fingerstyle</span></span>
 <span className="jg-circ" style={{ width: "48px", height: "48px", borderRadius: "999px", background: "#fff", color: "#1c1714", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", transition: "background .2s" }} aria-hidden="true">→</span>
 </span>
 </Link>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://jguitar.vn'),
   title: { default: 'J.guitar – Đàn Guitar Nhật Bãi Tuyển Chọn', template: '%s · J.guitar' },
   description:
-    'Showroom guitar nội địa Nhật tại Sài Gòn từ 2014. Đàn acoustic, classic tuyển chọn, setup miễn phí, bảo hành 12 tháng, thanh toán khi nhận hàng.',
+    'Shop guitar nội địa Nhật tại Sài Gòn từ 2014. Đàn acoustic, classic tuyển chọn, setup miễn phí, bảo hành 12 tháng, thanh toán khi nhận hàng.',
 };
 
 export const viewport: Viewport = {

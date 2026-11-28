@@ -16,7 +16,7 @@ export default function MHomeView({ vm }: { vm: any }) {
 <img src="/images/shop-tuong-dan.jpg" alt="Góc shop J.guitar với các cây đàn treo tường" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
 <span style={{ position: "absolute", left: "12px", bottom: "12px", padding: "8px 12px", borderRadius: "999px", background: "rgba(251,248,242,0.94)", fontSize: "12px", fontWeight: "700" }}>★ 4.9 · Setup miễn phí từng cây</span>
 </div>
-<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#74695d", marginTop: "6px" }}>SHOWROOM SÀI GÒN · TỪ 2014</span>
+<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#74695d", marginTop: "6px" }}>SHOP SÀI GÒN · TỪ 2014</span>
 <h1 style={{ margin: "0", fontSize: "27px", lineHeight: "1.12", fontWeight: "800", letterSpacing: "-0.035em" }}>Đàn Guitar Nhật Bãi Tuyển Chọn</h1>
 <p style={{ margin: "-6px 0 0", fontSize: "19px", lineHeight: "1.3", fontWeight: "700", color: "#b0471a", letterSpacing: "-0.02em" }}>Âm Thanh Chuẩn Nhật, Giá Trị Vượt Thời Gian</p>
 <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.6", color: "#6b6157" }}>Mỗi cây đàn là một tuyệt phẩm độc bản được tuyển chọn trực tiếp từ Nhật Bản, kiểm định kỹ càng và test âm thực tế trước khi đến tay người chơi.</p>

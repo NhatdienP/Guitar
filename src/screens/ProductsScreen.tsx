@@ -129,7 +129,7 @@ export default function ProductsScreen({ products, brands: BRANDS }: { products:
     empty: list.length === 0,
     emptyTitle: pk ? 'Phụ kiện đang được cập nhật lên web.' : 'Không có cây đàn nào khớp bộ lọc.',
     emptyText: pk
-      ? 'Capo, dây đàn, bao đàn… có sẵn tại showroom. Nhắn Zalo để hỏi mẫu và giá.'
+      ? 'Capo, dây đàn, bao đàn… có sẵn tại shop. Nhắn Zalo để hỏi mẫu và giá.'
       : 'Bỏ bớt điều kiện lọc, hoặc nhắn Zalo để shop tìm giúp bạn.',
   };
   const pickSort = (k: string) => () => {

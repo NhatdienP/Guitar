@@ -13,7 +13,7 @@ const SVC = [
   { n: '04', t: 'Hậu mãi trọn đời', d: 'Setup, vệ sinh, thay dây miễn phí mỗi lần ghé.' },
 ];
 const CATS = [
-  { t: 'Acoustic', d: 'Đệm hát · Fingerstyle · 200+ mẫu', img: img.catAc, href: '/san-pham?loai=Acoustic' },
+  { t: 'Acoustic', d: 'Đệm hát · Fingerstyle', img: img.catAc, href: '/san-pham?loai=Acoustic' },
   { t: 'Classic', d: 'Dây nylon · Người mới', img: img.catCl, href: '/san-pham?loai=Classic' },
   { t: 'Phụ kiện', d: 'Capo · Dây đàn · Bao đàn', img: img.setup, href: '/san-pham?loai=Ph%E1%BB%A5+ki%E1%BB%87n' },
 ];

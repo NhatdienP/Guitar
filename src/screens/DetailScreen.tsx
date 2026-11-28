@@ -11,7 +11,7 @@ type Field = keyof Form;
 const label = (x: Product) => `${x.type} · ${x.title} – ${x.priceText}`;
 const TRUST = [
   { t: 'Giao toàn quốc', d: 'Kiểm tra trước khi nhận' },
-  { t: 'Trả tiền khi nhận', d: 'COD hoặc tại showroom' },
+  { t: 'Trả tiền khi nhận', d: 'COD hoặc tại shop' },
   { t: 'Setup miễn phí', d: 'Chỉnh action, thay dây' },
   { t: 'Bảo hành 12 tháng', d: '1 đổi 1 trong 7 ngày' },
 ];

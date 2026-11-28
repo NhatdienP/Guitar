@@ -92,7 +92,7 @@ export default function MChiTietView({ vm }: { vm: any }) {
 <label className="jg-lb">Số lượng
 <select className="jg-in" value={vm.f.qty} onChange={vm.on.qty}><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="3+">Nhiều hơn 3</option></select></label>
 <label className="jg-lb">Hình thức nhận *
-<select className="jg-in" value={vm.f.ship} onChange={vm.on.ship}><option value="">Chọn...</option><option>Giao tận nơi – COD</option><option>Nhận tại showroom</option><option>Chuyển khoản trước</option></select></label>
+<select className="jg-in" value={vm.f.ship} onChange={vm.on.ship}><option value="">Chọn...</option><option>Giao tận nơi – COD</option><option>Nhận tại shop</option><option>Chuyển khoản trước</option></select></label>
 </div>
 <label className="jg-lb">Địa chỉ nhận hàng<input className="jg-in" value={vm.f.addr} onChange={vm.on.addr} placeholder="Số nhà, đường, phường, quận, tỉnh" /></label>
 <label className="jg-lb">Ghi chú<textarea className="jg-in" onChange={vm.on.note} value={vm.f.note} placeholder="Màu, thời gian giao, yêu cầu setup..." style={{ height: "88px", padding: "12px 14px", resize: "vertical" }} /></label>

@@ -21,7 +21,7 @@ export default function FooterView({ vm }: { vm: any }) {
 <Link className="jg-fl" href="/lien-he">Liên hệ</Link>
 </nav>
 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-<h3 className="jg-fh">Showroom</h3>
+<h3 className="jg-fh">Shop</h3>
 <span style={{ color: "#c2b2a1", fontSize: "15px", lineHeight: "1.4" }}>720/98/10E Lạc Long Quân, Phường Tân Hòa, TP.HCM</span>
 <span style={{ color: "#c2b2a1", fontSize: "15px", lineHeight: "1.4" }}>9:00 – 21:00 mỗi ngày</span>
 <a className="jg-fl" href="tel:0834777123" style={{ color: "#f4eee3", fontWeight: "600" }}>0834 777 123</a>

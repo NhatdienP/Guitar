@@ -1021,7 +1021,7 @@ export const img = {
 export const faq: [string, string][] = [
   [
     "Tôi có phải thanh toán online không?",
-    "Không. Bạn chỉ cần gửi đơn, shop gọi xác nhận. Thanh toán khi nhận đàn (COD), tại showroom, hoặc chuyển khoản nếu muốn."
+    "Không. Bạn chỉ cần gửi đơn, shop gọi xác nhận. Thanh toán khi nhận đàn (COD), tại shop, hoặc chuyển khoản nếu muốn."
   ],
   [
     "Bao lâu thì nhận được đàn?",

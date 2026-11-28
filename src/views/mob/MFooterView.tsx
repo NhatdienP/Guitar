@@ -17,7 +17,7 @@ export default function MFooterView({ vm }: { vm: any }) {
 <Link href="/lien-he" style={{ color: "#c2b2a1", textDecoration: "none", fontSize: "15px" }}>Liên hệ</Link>
 </div>
 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-<strong style={{ fontSize: "15px" }}>Showroom</strong>
+<strong style={{ fontSize: "15px" }}>Shop</strong>
 <span style={{ color: "#c2b2a1", fontSize: "15px" }}>720/98/10E Lạc Long Quân, Phường Tân Hòa, TP.HCM</span>
 <span style={{ color: "#c2b2a1", fontSize: "15px" }}>9:00 – 21:00 mỗi ngày</span>
 <a href="tel:0834777123" style={{ color: "#c2b2a1", textDecoration: "none", fontSize: "15px" }}>0834 777 123</a>

@@ -366,7 +366,7 @@ function sendOrderEmail_(to, order, sheetUrl) {
   var phoneText = order.phone.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
   var when = Utilities.formatDate(order.time, 'Asia/Ho_Chi_Minh', 'HH:mm · dd/MM/yyyy');
   var productUrl = order.productId ? getSiteUrl_() + '/san-pham/' + encodeURIComponent(order.productId) : '';
-  var shop = order.ship.indexOf('showroom') >= 0;
+  var shop = /showroom|tại shop/i.test(order.ship);
 
   var subject = 'Đơn mới #' + order.no + ' · ' + title + ' · ' + order.name;
 
@@ -402,7 +402,7 @@ function sendOrderEmail_(to, order, sheetUrl) {
       row('Điện thoại', '<a href="tel:' + order.phone + '" style="color:' + C.ink + ';font-weight:700;text-decoration:none">' + phoneText + '</a>') +
       row('Số lượng', esc_(order.qty)) +
       row('Nhận hàng', esc_(order.ship)) +
-      row('Địa chỉ', order.addr ? esc_(order.addr) : (shop ? '<span style="color:' + C.muted + '">Khách đến showroom</span>' : dash)) +
+      row('Địa chỉ', order.addr ? esc_(order.addr) : (shop ? '<span style="color:' + C.muted + '">Khách đến shop</span>' : dash)) +
       row('Ghi chú', order.note ? esc_(order.note).replace(/\n/g, '<br>') : dash) +
     '</table></td></tr>' +
     // actions
@@ -424,7 +424,7 @@ function sendOrderEmail_(to, order, sheetUrl) {
     'Khách:      ' + order.name + '\n' +
     'Điện thoại: ' + phoneText + '\n' +
     'Nhận hàng:  ' + order.ship + '\n' +
-    'Địa chỉ:    ' + (order.addr || (shop ? 'Khách đến showroom' : '—')) + '\n' +
+    'Địa chỉ:    ' + (order.addr || (shop ? 'Khách đến shop' : '—')) + '\n' +
     'Ghi chú:    ' + (order.note || '—') + '\n\n' +
     'Bảng đơn hàng: ' + sheetUrl + '\n' + (productUrl ? 'Xem đàn: ' + productUrl + '\n' : '');
 

@@ -45,9 +45,9 @@ export default function GioiThieuView({ vm }: { vm: any }) {
 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.14em", color: "#74695d" }}>CHƯƠNG 2 · TỪ NHẬT BẢN</span>
 <h2 style={{ margin: "0", fontSize: "32px", lineHeight: "1.15", fontWeight: "700", letterSpacing: "-0.03em" }}>Chọn từng cây, như chọn một người bạn đồng hành.</h2>
 <p style={{ margin: "0", fontSize: "17px", lineHeight: "1.8", color: "#4a4038" }}>Đàn guitar nội địa Nhật mang một tinh thần rất riêng: gỗ được để khô lâu năm, tay nghề tỉ mỉ, âm thanh càng chơi càng mở. Chúng tôi không nhập hàng loạt. Mỗi cây được nghe thử, sờ từng phím, nhìn từng đường vân trước khi được mang về Sài Gòn.</p>
-<p style={{ margin: "0", fontSize: "17px", lineHeight: "1.8", color: "#4a4038" }}>Hôm nay showroom có hơn 500 mẫu đàn. Bạn cứ ngồi xuống, đánh bao lâu tuỳ thích.</p>
+<p style={{ margin: "0", fontSize: "17px", lineHeight: "1.8", color: "#4a4038" }}>Hôm nay shop có hơn 50 mẫu đàn. Bạn cứ ngồi xuống, đánh bao lâu tuỳ thích.</p>
 </div>
-<img src="/images/22db0d18d4dfc4745c25c5b1f421ba3b.jpg" alt="Cây đàn classic dựng trên giá trong showroom" style={{ width: "100%", aspectRatio: "5 / 4", objectFit: "cover", borderRadius: "28px", display: "block" }} />
+<img src="/images/22db0d18d4dfc4745c25c5b1f421ba3b.jpg" alt="Cây đàn classic dựng trên giá trong shop" style={{ width: "100%", aspectRatio: "5 / 4", objectFit: "cover", borderRadius: "28px", display: "block" }} />
 </article>
 <article className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.1fr) minmax(0, 1fr)", gap: "64px", alignItems: "center" }}>
 <div style={{ position: "relative" }}>
@@ -86,7 +86,7 @@ export default function GioiThieuView({ vm }: { vm: any }) {
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "24px", maxWidth: "640px", color: "#fff" }}>
 <p className="jg-d" style={{ margin: "0", fontSize: "38px", lineHeight: "1.15", fontWeight: "700", letterSpacing: "-0.03em" }}>Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng, và một người chơi tự do.</p>
 <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-<Link href="/lien-he" style={{ padding: "14px 24px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Ghé showroom thử đàn</Link>
+<Link href="/lien-he" style={{ padding: "14px 24px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Ghé shop thử đàn</Link>
 <Link href="/san-pham" style={{ padding: "13px 23px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Xem các cây đàn</Link>
 </div>
 </div>
