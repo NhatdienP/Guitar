@@ -24,7 +24,7 @@ export default function MFooterView({ vm }: { vm: any }) {
 </div>
 </div>
 <div style={{ paddingTop: "22px", borderTop: "1px solid #4a3a30", color: "#a8988a", fontSize: "12px", lineHeight: "1.6", display: "flex", flexDirection: "column", gap: "6px" }}>
-<span>© 2026 Guitar Shop. Nội dung và hình ảnh mang tính minh hoạ.</span>
+<span>© 2026 J.Guitar. Nội dung và hình ảnh mang tính minh hoạ.</span>
 <span>Thanh toán khi nhận hàng · Giao toàn quốc · Ảnh: Pexels</span>
 </div>
 </footer>

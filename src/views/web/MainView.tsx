@@ -117,14 +117,14 @@ export default function MainView({ vm }: { vm: any }) {
 <section style={{ padding: "88px 24px", background: "#2a1e18", color: "#f4eee3" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "44px" }}>
 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "18px" }}>
-<span style={{ padding: "7px 14px", border: "1px solid #5a473b", borderRadius: "999px", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#c2b2a1" }}>VÌ SAO CHỌN GUITAR SHOP</span>
-<h2 style={{ margin: "0", maxWidth: "700px", fontSize: "46px", lineHeight: "1.05", fontWeight: "700", letterSpacing: "-0.035em" }}>Mua đàn an tâm. Chơi đàn trọn vẹn.</h2>
+<span style={{ padding: "7px 14px", border: "1px solid #5a473b", borderRadius: "999px", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#c2b2a1" }}>VÌ SAO CHỌN J.GUITAR</span>
+<h2 style={{ margin: "0", fontSize: "46px", lineHeight: "1.05", fontWeight: "700", letterSpacing: "-0.035em" }}>Mua đàn an tâm. Chơi đàn trọn vẹn.</h2>
 </div>
 <div className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)", gap: "20px" }}>
 <img src="/images/95b47819316bef1aa19d9c9641940e0b.jpg" alt="Kỹ thuật viên setup đàn" style={{ width: "100%", height: "100%", minHeight: "440px", objectFit: "cover", borderRadius: "32px", display: "block" }} />
 <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "20px" }}>
 {(vm.svc || []).map((v: any, _i5: number) => (<Fragment key={_i5}>
-<div className="jg-svc" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "48px", padding: "32px", border: "1px solid #4a3a30", borderRadius: "28px", background: "#352720", transition: "border-color .25s" }}>
+<div className="jg-svc" style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: "12px", padding: "32px", border: "1px solid #4a3a30", borderRadius: "28px", background: "#352720", transition: "border-color .25s" }}>
 <span style={{ color: "#b0471a", fontWeight: "700", fontSize: "15px" }}>{v.n}</span>
 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
 <h3 style={{ margin: "0", fontSize: "23px", letterSpacing: "-0.03em" }}>{v.t}</h3>
@@ -141,8 +141,7 @@ export default function MainView({ vm }: { vm: any }) {
 <img src="/images/ddeb6e14c8feeb4a4b1e9e61c162874a.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.1) 30%, rgba(28,23,20,0.85) 100%)" }}></span>
 <blockquote style={{ position: "relative", margin: "0", color: "#fff", display: "flex", flexDirection: "column", gap: "20px" }}>
-<p style={{ margin: "0", maxWidth: "900px", fontSize: "40px", lineHeight: "1.12", fontWeight: "700", letterSpacing: "-0.03em" }}>“Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng.”</p>
-<footer style={{ fontSize: "16px", opacity: "0.85" }}>— Đội ngũ Guitar Shop</footer>
+<p style={{ margin: "0", fontSize: "40px", lineHeight: "1.12", fontWeight: "700", letterSpacing: "-0.03em" }}>“Âm nhạc không cần hoàn hảo. Chỉ cần một cây đàn đúng.”</p>
 </blockquote>
 </div>
 </section>

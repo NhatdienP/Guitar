@@ -28,7 +28,7 @@ export default function FooterView({ vm }: { vm: any }) {
 </div>
 </div>
 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", paddingTop: "24px", borderTop: "1px solid #4a3a30", color: "#a8988a", fontSize: "13px" }}>
-<span>© 2026 Guitar Shop. Nội dung và hình ảnh mang tính minh hoạ.</span>
+<span>© 2026 J.Guitar. Nội dung và hình ảnh mang tính minh hoạ.</span>
 <span>Thanh toán khi nhận hàng · Giao toàn quốc · Ảnh: Pexels</span>
 </div>
 </div>

@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment } from 'react';
 import Link from 'next/link';
+import SearchSuggest from '@/components/SearchSuggest';
 
 export default function HeaderView({ vm }: { vm: any }) {
   return (
@@ -15,13 +16,14 @@ export default function HeaderView({ vm }: { vm: any }) {
 <Link className={vm.c2} href="/gioi-thieu">Giới thiệu</Link>
 <Link className={vm.c3} href="/lien-he">Liên hệ</Link>
 </nav>
-<form className="jg-sr" onSubmit={vm.submit} role="search" style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "10px", width: "280px", height: "42px", boxSizing: "border-box", padding: "0 16px", background: "#f4eee3", border: "1px solid #e2d8c7", borderRadius: "12px" }}>
+<form className="jg-sr" onSubmit={vm.submit} role="search" style={{ position: "relative", marginLeft: "auto", display: "flex", alignItems: "center", gap: "10px", width: "280px", height: "42px", boxSizing: "border-box", padding: "0 16px", background: "#f4eee3", border: "1px solid #e2d8c7", borderRadius: "12px" }}>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b6157" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
 <label htmlFor="jg-q" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0 0 0 0)" }}>Tìm model, thương hiệu</label>
-<input id="jg-q" type="search" value={vm.q} onChange={vm.typeQ} onKeyDown={vm.key} placeholder="Tìm model, thương hiệu…" style={{ flex: "1", minWidth: "0", border: "0", outline: "none", background: "transparent", font: "inherit", fontSize: "14px", color: "#1c1714" }} />
+<input id="jg-q" type="search" value={vm.q} onChange={vm.typeQ} onKeyDown={vm.key} onFocus={vm.focus} onBlur={vm.blur} autoComplete="off" aria-autocomplete="list" aria-expanded={!!vm.suggest?.show} placeholder="Tìm model, thương hiệu…" style={{ flex: "1", minWidth: "0", border: "0", outline: "none", background: "transparent", font: "inherit", fontSize: "14px", color: "#1c1714" }} />
 {(vm.notLive) && (<>
 <Link href={vm.searchHref} aria-label="Tìm trong trang Sản phẩm" style={{ flex: "none", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.08em", color: "#6b6157", textDecoration: "none", padding: "3px 7px", border: "1px solid #e2d8c7", borderRadius: "6px" }}>TÌM</Link>
 </>)}
+<SearchSuggest s={vm.suggest} variant="web" />
 </form>
 <a className="jg-hl" href="tel:0834777123" style={{ display: "flex", alignItems: "center", gap: "12px", flex: "none", paddingLeft: "24px", borderLeft: "1px solid #e2d8c7", height: "40px", color: "#1c1714", textDecoration: "none" }}>
 <span style={{ width: "38px", height: "38px", borderRadius: "999px", background: "#fbe9dd", display: "flex", alignItems: "center", justifyContent: "center" }} aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0471a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" /></svg></span>
