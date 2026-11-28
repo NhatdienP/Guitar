@@ -17,7 +17,7 @@ export default function MGioiThieuView({ vm }: { vm: any }) {
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "14px", color: "#fff" }}>
 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>VỀ CHÚNG TÔI</span>
 <h1 style={{ margin: "0", fontSize: "26px", lineHeight: "1.1", fontWeight: "800", letterSpacing: "-0.035em" }}>Một cửa hàng nhỏ, một tình yêu lớn với tiếng đàn.</h1>
-<p style={{ margin: "0", fontSize: "15px", lineHeight: "1.6", opacity: "0.88" }}>Bắt đầu từ một chiếc bàn sửa đàn năm 2014, J.guitar giờ là nơi hơn 12.000 người chơi đã tìm được cây đàn của mình.</p>
+<p style={{ margin: "0", fontSize: "15px", lineHeight: "1.6", opacity: "0.88" }}>Bắt đầu từ một chiếc bàn sửa đàn năm 2014, J.guitar giờ là nơi nhiều người chơi đã tìm được cây đàn của mình.</p>
 </div>
 </div>
 </section>

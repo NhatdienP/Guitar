@@ -17,7 +17,7 @@ export default function GioiThieuView({ vm }: { vm: any }) {
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "20px", color: "#fff", maxWidth: "860px" }}>
 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>VỀ CHÚNG TÔI</span>
 <h1 className="jg-h1" style={{ margin: "0", fontSize: "43px", lineHeight: "1.06", fontWeight: "800", letterSpacing: "-0.035em" }}>Một cửa hàng nhỏ, một tình yêu lớn với tiếng đàn.</h1>
-<p style={{ margin: "0", maxWidth: "640px", fontSize: "16px", lineHeight: "1.65", opacity: "0.88" }}>Bắt đầu từ một chiếc bàn sửa đàn năm 2014, J.guitar giờ là nơi hơn 12.000 người chơi đã tìm được cây đàn của mình.</p>
+<p style={{ margin: "0", maxWidth: "640px", fontSize: "16px", lineHeight: "1.65", opacity: "0.88" }}>Bắt đầu từ một chiếc bàn sửa đàn năm 2014, J.guitar giờ là nơi nhiều người chơi đã tìm được cây đàn của mình.</p>
 </div>
 </div>
 </section>
