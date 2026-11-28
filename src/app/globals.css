@@ -292,23 +292,32 @@ button[disabled][aria-busy="true"] {
   line-height: 1.5;
 }
 
-/* Desktop header while showing search suggestions: wider search box,
-   hotline and Zalo collapse to their icons so everything still fits. */
+/* Desktop header while showing search suggestions: the search box keeps its
+   left edge and grows to the right; hotline and Zalo collapse to matching
+   round icons so the dropdown (same width as the box) has room. */
 .v-web .jg-sr {
-  transition: width 0.25s ease, border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 .v-web .jg-hdr.searching .jg-sr {
-  width: 420px !important;
+  flex: 1 1 auto;
+  width: auto !important;
+  margin-left: var(--jg-sr-ml, auto) !important;
 }
 .v-web .jg-hdr.searching .jg-hl-t,
 .v-web .jg-hdr.searching .jg-zl-t {
   display: none !important;
 }
 .v-web .jg-hdr.searching .jg-hl {
-  padding-left: 16px !important;
+  padding-left: 20px !important;
+}
+.v-web .jg-hdr.searching .jg-hl-i,
+.v-web .jg-hdr.searching .jg-zl {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 999px !important;
 }
 .v-web .jg-hdr.searching .jg-zl {
-  width: 42px;
+  margin-left: -30px; /* 40px row gap -> 10px between the two icons */
   padding: 0 !important;
   justify-content: center;
 }
