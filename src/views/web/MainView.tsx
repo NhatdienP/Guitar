@@ -26,7 +26,7 @@ export default function MainView({ vm }: { vm: any }) {
 </div>
 </div>
 <div style={{ position: "relative" }}>
-<img src="/images/406e57d9ef3bfbbd035fb0b7f4aa9707.jpg" alt="Showroom J.guitar với hàng trăm cây đàn" style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "32px", display: "block" }} />
+<img src="/images/shop-tuong-dan.jpg" alt="Góc shop J.guitar với các cây đàn treo tường" style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "32px", display: "block" }} />
 <span style={{ position: "absolute", top: "22px", right: "22px", padding: "10px 16px", borderRadius: "999px", background: "rgba(28,23,20,0.86)", color: "#fff", fontSize: "13px", fontWeight: "600" }}>★ 4.9 · Setup miễn phí</span>
 <Link href="/san-pham" style={{ position: "absolute", left: "-28px", bottom: "36px", display: "flex", alignItems: "center", gap: "12px", padding: "10px 18px 10px 10px", background: "#fbf8f2", borderRadius: "18px", boxShadow: "0 18px 40px rgba(28,23,20,0.16)", textDecoration: "none", color: "#1c1714" }}>
 <img src="/images/e720928287285a2b17f404c99d98cfba.jpg" alt="" style={{ width: "54px", height: "54px", borderRadius: "12px", objectFit: "cover" }} />
@@ -175,11 +175,11 @@ export default function MainView({ vm }: { vm: any }) {
 <section style={{ padding: "0 24px 88px" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "40px", flexWrap: "wrap", padding: "56px 56px", boxSizing: "border-box", borderRadius: "32px", background: "#b0471a", color: "#fff" }}>
 <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "15px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>SHOWROOM QUẬN 1 · 9:00 – 21:00</span>
+<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "15px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>SHOP TÂN HÒA · 9:00 – 21:00</span>
 <h2 style={{ margin: "0", fontSize: "40px", lineHeight: "1.08", fontWeight: "700", letterSpacing: "-0.03em" }}>Ghé thử đàn. Miễn phí,<br />không ép mua.</h2>
 </div>
 <div style={{ display: "flex", flexDirection: "column", gap: "14px", width: "380px", maxWidth: "100%" }}>
-<a className="jg-btn" href="https://maps.google.com/?q=123+%C4%90%C6%B0%E1%BB%9Dng+ABC+Qu%E1%BA%ADn+1" target="_blank" rel="noopener" style={{ padding: "15px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "16px", textAlign: "center", textDecoration: "none" }}>Xem đường đi</a>
+<a className="jg-btn" href="https://maps.app.goo.gl/7j8eoVuhq3MCX4qh8" target="_blank" rel="noopener" style={{ padding: "15px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "16px", textAlign: "center", textDecoration: "none" }}>Xem đường đi</a>
 <a className="jg-btn" href="tel:0834777123" style={{ padding: "14px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", background: "rgba(255,255,255,0.08)", color: "#fff", fontWeight: "600", fontSize: "16px", textAlign: "center", textDecoration: "none" }}>Gọi 0834 777 123</a>
 </div>
 </div>

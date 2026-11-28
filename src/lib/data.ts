@@ -1008,7 +1008,7 @@ export const brands: string[] = ["Yamaha", "Matsuoka", "Aria", "S.Yairi", "Suzuk
 export const img = {
   "logoDark": "/images/909bedfa70b24da56b5d544e96543808.png",
   "logoWhite": "/images/5cac1cd4a07fc3a45c150383698de507.png",
-  "showroom": "/images/406e57d9ef3bfbbd035fb0b7f4aa9707.jpg",
+  "showroom": "/images/shop-tuong-dan.jpg",
   "p1": "/images/e720928287285a2b17f404c99d98cfba.jpg",
   "p5": "/images/ee9379a3563ca310612fb4d60fd070da.jpg",
   "catAc": "/images/f3ba41d582ce6f4126af6007183bae59.jpg",

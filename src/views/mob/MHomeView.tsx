@@ -13,7 +13,7 @@ export default function MHomeView({ vm }: { vm: any }) {
 <div style={{ display: "block", position: "sticky", top: "0", zIndex: "60" }}><MHeader go={vm.go} /></div>
 <section style={{ padding: "8px 20px 40px", display: "flex", flexDirection: "column", gap: "18px" }}>
 <div style={{ position: "relative", height: "200px", borderRadius: "24px", overflow: "hidden", background: "#2a1e18" }}>
-<img src="/images/ee9379a3563ca310612fb4d60fd070da.jpg" alt="Cận cảnh lỗ thoát âm đàn classic" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+<img src="/images/shop-tuong-dan.jpg" alt="Góc shop J.guitar với các cây đàn treo tường" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
 <span style={{ position: "absolute", left: "12px", bottom: "12px", padding: "8px 12px", borderRadius: "999px", background: "rgba(251,248,242,0.94)", fontSize: "12px", fontWeight: "700" }}>★ 4.9 · Setup miễn phí từng cây</span>
 </div>
 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.12em", color: "#74695d", marginTop: "6px" }}>SHOWROOM SÀI GÒN · TỪ 2014</span>
@@ -119,9 +119,9 @@ export default function MHomeView({ vm }: { vm: any }) {
 </section>
 <section style={{ padding: "0 20px 52px" }}>
 <div style={{ padding: "36px 24px", borderRadius: "24px", background: "#b0471a", color: "#fff", display: "flex", flexDirection: "column", gap: "14px" }}>
-<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>SHOWROOM QUẬN 1 · 9:00 – 21:00</span>
+<span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>SHOP TÂN HÒA · 9:00 – 21:00</span>
 <h2 style={{ margin: "0 0 10px", fontSize: "26px", lineHeight: "1.1", fontWeight: "700", letterSpacing: "-0.03em" }}>Ghé thử đàn. Miễn phí, không ép mua.</h2>
-<a href="https://maps.google.com/?q=123+%C4%90%C6%B0%E1%BB%9Dng+ABC+Qu%E1%BA%ADn+1" target="_blank" rel="noopener" style={{ padding: "16px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "15px", textAlign: "center", textDecoration: "none" }}>Xem đường đi</a>
+<a href="https://maps.app.goo.gl/7j8eoVuhq3MCX4qh8" target="_blank" rel="noopener" style={{ padding: "16px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "15px", textAlign: "center", textDecoration: "none" }}>Xem đường đi</a>
 <a href="tel:0834777123" style={{ padding: "15px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", background: "rgba(255,255,255,0.08)", color: "#fff", fontWeight: "600", fontSize: "15px", textAlign: "center", textDecoration: "none" }}>Gọi 0834 777 123</a>
 </div>
 </section>

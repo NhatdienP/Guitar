@@ -12,11 +12,11 @@ export default function LienHeView({ vm }: { vm: any }) {
 <div style={{ display: "block", position: "sticky", top: "0", zIndex: "60" }}><Header go={vm.go} active="lh" /></div>
 <section style={{ padding: "16px 24px 0" }}>
 <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", minHeight: "460px", borderRadius: "32px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "48px", boxSizing: "border-box", backgroundColor: "#2a1e18" }}>
-<img src="/images/406e57d9ef3bfbbd035fb0b7f4aa9707.jpg" alt="Showroom J.guitar" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/shop-goc-dan.jpg" alt="Shop J.guitar" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.15) 10%, rgba(28,23,20,0.9) 100%)" }}></span>
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "20px", color: "#fff", maxWidth: "860px" }}>
 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.14em", opacity: "0.85" }}>LIÊN HỆ</span>
-<h1 className="jg-h1" style={{ margin: "0", fontSize: "43px", lineHeight: "1.06", fontWeight: "800", letterSpacing: "-0.035em" }}>Ghé showroom hoặc nhắn cho chúng tôi.</h1>
+<h1 className="jg-h1" style={{ margin: "0", fontSize: "43px", lineHeight: "1.06", fontWeight: "800", letterSpacing: "-0.035em" }}>Ghé shop hoặc nhắn cho chúng tôi.</h1>
 <p style={{ margin: "0", maxWidth: "620px", fontSize: "16px", lineHeight: "1.65", opacity: "0.88" }}>Đội ngũ tư vấn trả lời trong vòng 15 phút trong giờ mở cửa. Đặt lịch trước để có phòng thử đàn riêng.</p>
 </div>
 </div>
@@ -24,7 +24,7 @@ export default function LienHeView({ vm }: { vm: any }) {
 <section style={{ padding: "72px 24px 48px" }}>
 <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center", display: "flex", flexDirection: "column", gap: "16px" }}>
 <h2 style={{ margin: "0", fontSize: "29px", lineHeight: "1.15", fontWeight: "700", letterSpacing: "-0.04em" }}>Ghé thử đàn, miễn phí và không ép mua</h2>
-<p style={{ margin: "0", fontSize: "16px", lineHeight: "1.7", color: "#6b6157" }}>Showroom có phòng thử cách âm, ampli và pedal sẵn sàng. Bạn có thể thử bao nhiêu cây tuỳ thích, kỹ thuật viên sẽ setup đàn theo tay bạn ngay tại chỗ.</p>
+<p style={{ margin: "0", fontSize: "16px", lineHeight: "1.7", color: "#6b6157" }}>Bạn có thể thử bao nhiêu cây tuỳ thích, kỹ thuật viên sẽ setup đàn theo tay bạn ngay tại chỗ.</p>
 </div>
 </section>
 <section style={{ padding: "0 24px 88px" }}>
@@ -38,12 +38,12 @@ export default function LienHeView({ vm }: { vm: any }) {
 </Fragment>))}
 </div>
 <div style={{ position: "relative", minHeight: "360px", borderRadius: "28px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "36px", boxSizing: "border-box", backgroundColor: "#2a1e18" }}>
-<img src="/images/406e57d9ef3bfbbd035fb0b7f4aa9707.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+<img src="/images/shop-tuong-dan.jpg" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(rgba(28,23,20,0.1), rgba(28,23,20,0.8))" }}></span>
 <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "18px", color: "#fff" }}>
 <strong className="jg-d" style={{ fontSize: "25px", letterSpacing: "-0.03em", lineHeight: "1.2" }}>Ghé thử đàn, miễn phí và không ép mua.</strong>
 <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-<a href="https://maps.google.com/?q=123+%C4%90%C6%B0%E1%BB%9Dng+ABC+Qu%E1%BA%ADn+1" target="_blank" rel="noopener" style={{ padding: "14px 22px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Chỉ đường Google Maps</a>
+<a href="https://maps.app.goo.gl/7j8eoVuhq3MCX4qh8" target="_blank" rel="noopener" style={{ padding: "14px 22px", borderRadius: "999px", background: "#fff", color: "#1c1714", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Chỉ đường Google Maps</a>
 <Link href="/san-pham" style={{ padding: "13px 21px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.5)", color: "#fff", fontWeight: "600", fontSize: "15px", textDecoration: "none" }}>Đặt lịch / đặt hàng</Link>
 </div>
 </div>
