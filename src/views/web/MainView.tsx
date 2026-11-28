@@ -120,10 +120,10 @@ export default function MainView({ vm }: { vm: any }) {
 <h2 style={{ margin: "0", fontSize: "46px", lineHeight: "1.05", fontWeight: "700", letterSpacing: "-0.035em" }}>Mua đàn an tâm. Chơi đàn trọn vẹn.</h2>
 </div>
 <div className="jg-2col" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)", gap: "20px" }}>
-<img src="/images/95b47819316bef1aa19d9c9641940e0b.jpg" alt="Kỹ thuật viên setup đàn" style={{ width: "100%", height: "100%", minHeight: "440px", objectFit: "cover", borderRadius: "32px", display: "block" }} />
-<div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "20px" }}>
+<div style={{ position: "relative", minHeight: "380px", borderRadius: "32px", overflow: "hidden", background: "#352720" }}><img src="/images/setup-dan.jpg" alt="Kỹ thuật viên setup đàn: thay dây, đo action" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} /></div>
+<div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gridAutoRows: "1fr", gap: "20px" }}>
 {(vm.svc || []).map((v: any, _i5: number) => (<Fragment key={_i5}>
-<div className="jg-svc" style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: "12px", padding: "32px", border: "1px solid #4a3a30", borderRadius: "28px", background: "#352720", transition: "border-color .25s" }}>
+<div className="jg-svc" style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", gap: "16px", padding: "32px 32px 34px", border: "1px solid #4a3a30", borderRadius: "28px", background: "#352720", transition: "border-color .25s" }}>
 <span style={{ color: "#b0471a", fontWeight: "700", fontSize: "15px" }}>{v.n}</span>
 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
 <h3 style={{ margin: "0", fontSize: "23px", letterSpacing: "-0.03em" }}>{v.t}</h3>
