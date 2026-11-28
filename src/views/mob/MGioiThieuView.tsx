@@ -45,7 +45,7 @@ export default function MGioiThieuView({ vm }: { vm: any }) {
 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.14em", color: "#74695d" }}>CHƯƠNG 2 · TỪ NHẬT BẢN</span>
 <h2 style={{ margin: "0", fontSize: "24px", lineHeight: "1.18", fontWeight: "700", letterSpacing: "-0.03em" }}>Chọn từng cây, như chọn một người bạn đồng hành.</h2>
 <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.75", color: "#4a4038" }}>Đàn guitar nội địa Nhật mang một tinh thần rất riêng: gỗ được để khô lâu năm, tay nghề tỉ mỉ, âm thanh càng chơi càng mở. Chúng tôi không nhập hàng loạt. Mỗi cây được nghe thử, sờ từng phím, nhìn từng đường vân trước khi được mang về Sài Gòn.</p>
-<p style={{ margin: "0", fontSize: "16px", lineHeight: "1.75", color: "#4a4038" }}>Hôm nay showroom có hơn 500 mẫu đàn và một phòng thử cách âm. Bạn cứ ngồi xuống, đánh bao lâu tuỳ thích.</p>
+<p style={{ margin: "0", fontSize: "16px", lineHeight: "1.75", color: "#4a4038" }}>Hôm nay showroom có hơn 500 mẫu đàn. Bạn cứ ngồi xuống, đánh bao lâu tuỳ thích.</p>
 </div>
 </article>
 <article style={{ display: "flex", flexDirection: "column", gap: "38px" }}>
