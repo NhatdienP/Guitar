@@ -140,8 +140,7 @@ export default function MainView({ vm }: { vm: any }) {
 <img src="/images/dan-acoustic-am.jpg" alt="Người chơi đàn acoustic trong căn phòng ấm" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "70% 55%" }} />
 <span style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(28,23,20,0.72) 0%, rgba(28,23,20,0.35) 55%, rgba(28,23,20,0.05) 100%)" }}></span>
 <blockquote style={{ position: "relative", margin: "0", maxWidth: "460px", color: "#fff", display: "flex", flexDirection: "column", gap: "18px" }}>
-<span aria-hidden="true" style={{ fontFamily: "'Bricolage Grotesque', serif", fontSize: "88px", lineHeight: "0.6", height: "40px", fontWeight: "800", color: "#e08a5a" }}>“</span>
-<p style={{ margin: "0", fontSize: "30px", lineHeight: "1.32", fontWeight: "600", letterSpacing: "-0.02em", textWrap: "balance" }}>Một cây đàn hay không chỉ tạo nên âm nhạc, mà còn đánh thức người nghệ sĩ trong bạn.<span aria-hidden="true" style={{ color: "#e08a5a", fontWeight: "800", marginLeft: "2px" }}>”</span></p>
+<p style={{ margin: "0", fontSize: "30px", lineHeight: "1.32", fontWeight: "600", letterSpacing: "-0.02em", textWrap: "balance" }}><span aria-hidden="true" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#e08a5a", fontWeight: "700" }}>“</span>Một cây đàn hay không chỉ tạo nên âm nhạc, mà còn đánh thức người nghệ sĩ trong bạn.<span aria-hidden="true" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#e08a5a", fontWeight: "700" }}>”</span></p>
 <span aria-hidden="true" style={{ width: "48px", height: "3px", borderRadius: "2px", background: "#e08a5a" }}></span>
 </blockquote>
 </div>
